@@ -1,1 +1,25 @@
-{"runs": []}
+{
+ "runs": [
+  {
+   "when": "2026-09-13T19:43:43+00:00",
+   "searches": 20,
+   "states": [
+    "Oklahoma",
+    "Texas",
+    "Kansas",
+    "Arkansas",
+    "Louisiana",
+    "Missouri",
+    "New Mexico",
+    "Colorado"
+   ],
+   "new_videos": 77,
+   "tracked_videos": 77,
+   "new_comments": 1405,
+   "refreshed_comments": 0,
+   "expired_comments": 0,
+   "total_comments": 1405,
+   "problems": []
+  }
+ ]
+}
