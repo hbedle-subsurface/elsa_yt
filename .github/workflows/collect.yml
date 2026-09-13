@@ -1,0 +1,59 @@
+name: Collect comments
+
+on:
+  schedule:
+    - cron: '17 13 * * 1'
+  workflow_dispatch:
+    inputs:
+      states:
+        description: 'States, comma separated. Leave blank for the usual eight.'
+        required: false
+        default: ''
+      days:
+        description: 'How far back to look for videos. Blank uses 365.'
+        required: false
+        default: ''
+      topics:
+        description: 'solar_siting, agrivoltaics, solar_on_water. Blank runs all.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-comments
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run the collector
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: |
+          python collect/collect.py \
+            ${{ inputs.states && format('--states "{0}"', inputs.states) || '' }} \
+            ${{ inputs.days   && format('--days {0}',     inputs.days)   || '' }} \
+            ${{ inputs.topics && format('--topics "{0}"', inputs.topics) || '' }}
+
+      - name: Save what it found
+        run: |
+          git config user.name  'comment collector'
+          git config user.email 'actions@github.com'
+          git add data/comments.json data/videos.json data/runs.json
+          if git diff --staged --quiet; then
+            echo "Nothing changed this time."
+          else
+            git commit -m "Collected comments, $(date -u +%Y-%m-%d)"
+            git push
+          fi
