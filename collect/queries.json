@@ -1,0 +1,81 @@
+{
+  "_comment": [
+    "What the collector looks for. Edit this file to change the search;",
+    "nothing else needs to change.",
+    "",
+    "YouTube search is not like a news database. It ignores most boolean",
+    "syntax and matches loosely against titles, descriptions and tags, so",
+    "these are short plain phrases rather than the long OR-chains the news",
+    "crawler uses. Quoted phrases do still get treated as phrases.",
+    "",
+    "Videos are what gets searched. Comments are then pulled from the",
+    "videos that look relevant, so a bad video filter wastes nothing but",
+    "does bury good comments under junk."
+  ],
+
+  "states": [
+    "Oklahoma", "Texas", "Kansas", "Arkansas",
+    "Louisiana", "Missouri", "New Mexico", "Colorado"
+  ],
+
+  "topics": [
+    {
+      "id": "solar_siting",
+      "label": "Solar siting and local opposition",
+      "per_state": true,
+      "searches": ["\"solar farm\" county meeting", "\"solar farm\" residents oppose"],
+      "recognize": ["solar farm", "solar project", "solar array", "solar development",
+                    "utility-scale solar", "solar plant", "battery storage"]
+    },
+    {
+      "id": "agrivoltaics",
+      "label": "Agrivoltaics",
+      "per_state": false,
+      "searches": ["agrivoltaics", "solar grazing sheep"],
+      "recognize": ["agrivoltaic", "solar grazing", "dual-use solar", "sheep graz",
+                    "graze between", "under the panels", "between the panels"]
+    },
+    {
+      "id": "solar_on_water",
+      "label": "Solar on canals and reservoirs",
+      "per_state": false,
+      "searches": ["\"floating solar\"", "solar canal reservoir"],
+      "recognize": ["floating solar", "canal solar", "reservoir solar", "floatovoltaic",
+                    "panels over water", "irrigation canal", "solar canopy over"]
+    }
+  ],
+
+  "_relevance_comment": [
+    "A video is scored on its title, channel name and description. Two",
+    "points for a topic phrase, one each for an opposition word (up to",
+    "two), a named county, a named state, and a local-news channel.",
+    "Below keep_threshold its comments are not fetched at all."
+  ],
+  "angles": ["meeting", "hearing", "commission", "zoning", "moratorium",
+             "residents", "oppose", "opposition", "vote", "county", "public comment",
+             "town hall", "protest", "petition"],
+  "local_channel_hints": ["news", "kfor", "koco", "kotv", "kwtv", "ktul", "kake",
+                          "ksnw", "kwch", "kark", "katv", "kslg", "wdsu", "wafb",
+                          "ksdk", "kold", "krqe", "koat", "kob", "9news", "denver7",
+                          "abc", "cbs", "nbc", "fox", "tv", "channel", "county",
+                          "city of", "board of"],
+  "keep_threshold": 3,
+
+  "_limits_comment": [
+    "YouTube's developer policies require stored API data to be deleted or",
+    "refreshed within 30 calendar days. Every run re-fetches comments for",
+    "every tracked video, which keeps them inside that window. max_tracked",
+    "is the cap on how many videos stay in the refresh cycle; when a video",
+    "drops out, its comment text is removed and only the link and your own",
+    "coding remain. Export before that if you need the words.",
+    "",
+    "search.list bills to its own bucket of about 100 calls a day.",
+    "commentThreads costs one unit per page of 100 comments from the",
+    "10,000-unit pool, so comments are effectively free and searching is",
+    "the thing to keep an eye on."
+  ],
+  "max_tracked": 250,
+  "max_comment_pages": 5,
+  "search_days": 365,
+  "expire_days": 30
+}
