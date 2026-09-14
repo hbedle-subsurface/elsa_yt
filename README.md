@@ -1,41 +1,39 @@
-# What people say about energy projects
+# What people say about solar
 
-Collects YouTube comments left under local coverage of energy infrastructure proposed in
+Collects YouTube comments left under local coverage of solar projects proposed in
 Oklahoma, and gives you a page for reading and coding them.
 
-Thirteen topics: **solar, wind, battery storage, carbon capture and CO2 pipelines,
-nuclear, hydrogen, hydropower and dams, transmission lines, disposal wells and
-earthquakes, geothermal, biogas and digesters**, plus agrivoltaics and solar on canals and
-reservoirs. The left rail filters by any of them.
-
-Three of those are there for reasons particular to Oklahoma.
-
-**Hydropower** is the Pensacola Dam. FERC found the dam responsible for chronic flooding
-in Miami and ordered GRDA to buy the land it floods; GRDA appealed to the D.C. Circuit.
-The city and 456 property owners are in civil litigation, four tribal nations have filed
-in the relicensing, and a 2019 act of Congress limited FERC's authority over this one dam
-specifically. Decades of public response, tribal sovereignty and easement law in a single
-case.
-
-**Disposal wells and earthquakes** is the comparison case where opposition won. The
-2009–2016 swarm, sustained public pressure, and regulation that actually changed. It also
-shares its mechanism with carbon capture, so the two can be read against each other.
-
-**Transmission lines** are where eminent domain bites, and where solar and wind fights
-often end up. Oklahoma already lived through Plains & Eastern Clean Line.
-
-Data centers live in a companion repository, **datacenter_yt** — a data center is demand
-rather than generation, and on its own it sweeps every Oklahoma place in under two weeks
-instead of thirteen.
-
-**The two share one API key, so they must not run on the same day.** The YouTube quota
-belongs to the Google Cloud project rather than the repository. This one runs Mondays,
-datacenter_yt runs Thursdays.
-
-`codebook.json` is deliberately identical in both, so the two exports carry the same
-columns and can be stacked in a spreadsheet and compared directly. Keep them in sync.
-
 Live at **https://hbedle-subsurface.github.io/elsa_yt/**
+
+Three topics: **solar siting and local opposition**, **agrivoltaics**, and **solar on
+canals and reservoirs**. The left rail filters by any of them.
+
+This is the YouTube half of the solar project. **elsa_doc** is the news half, and the two
+are independent — this one does not read anything from it.
+
+**Oklahoma only**, not the eight states the news crawler covers. YouTube ignores a bare
+state name when it has a stronger title match, so the search has to be driven by county
+and town names, and eight states is roughly seven hundred counties. One state swept
+properly beats eight swept badly. All 127 Oklahoma counties and towns are covered in under
+two weeks.
+
+### It shares an API key with two other crawlers
+
+`datacenter_yt` and `ses_ok_yt` cover other subjects, and the YouTube quota of roughly a
+hundred searches a day belongs to the Google Cloud project rather than to any one
+repository. So each has its own day:
+
+| repo | subject | runs |
+|---|---|---|
+| elsa_yt | solar, Oklahoma | Mondays |
+| datacenter_yt | data centers, Oklahoma | Tuesdays |
+| ses_ok_yt | all energy types, Oklahoma | Wednesdays |
+
+Don't trigger two of them by hand on the same day. The second will fail with a quota
+error — harmless, it picks up the following week, but confusing if you don't know why.
+
+`codebook.json` is deliberately identical across all of them, so every export carries the
+same columns and they can be stacked in a spreadsheet and compared. Keep them in sync.
 
 ---
 
@@ -49,8 +47,7 @@ at all. Three separate mistakes caused that, and all three are fixed here.
 **Searching by state does nothing on YouTube.** YouTube ignores a state name when it has a
 stronger title match, so "solar farm Oklahoma" returned whatever was popular about solar
 farms. Local coverage is titled by county — *Payne County residents pack hearing* — so
-counties are what gets searched now. The county list comes from the news crawler, which
-already pulls county names out of headlines.
+counties and towns are what gets searched now.
 
 **The filter let anything through on a title match.** Subject and locality were added into
 one score with the bar at 3, and a topic phrase in the title scored exactly 3. So
@@ -114,23 +111,30 @@ permanent corpus belongs.
 
 ## What to expect, honestly
 
-A complete sweep of all 77 Oklahoma counties for solar returned six videos carrying
-**fourteen comments**. Oklahoma local TV does cover these hearings; almost nobody comments
-on the clips. That is a finding, and it is worth writing up rather than working around.
+A complete sweep of all 77 Oklahoma counties returned six videos carrying **fourteen
+comments**. That was with an earlier, looser filter; this version searches more places and
+excludes more junk, so the number will move, but not by an order of magnitude.
 
-The expansion is a bet that some of the other technologies behave differently. Data
-centers are the strongest candidate: a Gallup survey in March 2026 found 71% of Americans
-oppose a data center near them, 48% strongly — higher than opposition to a nearby nuclear
-plant — and opposition swung 49 points in nine months. Oklahoma City's council passed a
-moratorium, SB 1488 would pause data centers over 100 MW statewide until 2029, HB 2992
-adds ratepayer protections, and the Cherokee Nation barred them on its tribal lands. That
-is a live fight with national attention behind it, which is the thing rural solar lacked.
+Oklahoma local TV does cover these hearings — KJRH and FOX23 in Tulsa and KOKH in Oklahoma
+City all turned up, on a Wagoner County zoning denial and a neighbours' opposition meeting.
+The clips get one or two comments each. The coverage exists; the discussion does not happen
+underneath it.
 
-Wind is the other candidate, on a much longer opposition history in the state.
+Treat that as a result rather than a failure. If a month of running confirms it, the
+methods section writes itself:
 
-If the other technologies come back as thin as solar did, that is the answer: this
-conversation does not happen on YouTube in Oklahoma, and the effort belongs in county
-minutes and written public comment instead.
+> A systematic sweep of all 77 Oklahoma counties and 50 municipalities returned N videos of
+> local solar siting coverage carrying M comments. Local broadcast outlets cover county and
+> city hearings, but the resulting clips generate little public discussion. YouTube comments
+> were not a viable source for Oklahoma public response to solar siting.
+
+That is worth more than a thin dataset dressed up as a finding, and it points at where the
+voices actually are: county commission and city council minutes, and written public comment
+submitted into a zoning file. The Wagoner County denial this crawler found has a hearing
+record behind it with far more in it than two comments.
+
+Leave the crawler running regardless. It costs nothing, and if a major Oklahoma solar fight
+erupts it will catch it.
 
 ---
 
@@ -138,38 +142,28 @@ minutes and written public comment instead.
 
 `collect/queries.json` holds everything.
 
-Seventy-seven counties across seven technologies is 539 combinations, and YouTube allows
-roughly 100 searches a day. So there are **two tiers**:
+All 77 Oklahoma counties and 50 towns, searched for solar. 127 places, and the whole list
+is worked through in under two weeks.
 
-**Statewide, every run.** 37 searches covering every technology — "Oklahoma data center
-moratorium", "Oklahoma wind turbine moratorium", "Oklahoma CO2 pipeline eminent domain"
-and so on. Anything that makes the state news is caught within a week.
+**Statewide, every run.** 8 searches — solar farm opposition, moratoria, zoning hearings,
+plus agrivoltaics and canal solar, which are statewide-only because the volume is too low
+to ask 127 places individually. Anything that makes the state news is caught within a
+week.
 
-**Place by place, on rotation.** 662 place-and-technology combinations. Each run takes the
-next 48 and picks up where the last one stopped, so a full cycle is about twelve weeks.
-
-**Not every topic sweeps every place.** A topic can carry its own `places` list.
-Hydropower is a Grand Lake story, so it sweeps twelve places around it. Disposal wells and
-earthquakes sweeps the fifteen in the seismic belt north of Oklahoma City. Sweeping all
-127 for either would spend the budget asking counties with no dam and no disposal wells.
-Transmission sweeps everywhere, because lines cross the state.
-
-Nuclear, hydrogen, geothermal, biogas, agrivoltaics and canal solar are **statewide only**
-— Oklahoma has no operating reactor and the others are early enough that asking 127 places
-individually would return nothing 127 times. If something appears, the statewide searches
-catch it. The position is kept in
+**Place by place, on rotation.** 127 places. Each run takes the next 75 and picks up where
+the last one stopped, so a full cycle is under two weeks. The position is kept in
 `data/runs.json` and printed at the top of every run.
 
 **Towns matter more than they look.** Most Oklahoma counties do not zone; municipalities
-do. A data center or battery site near a town is decided by a city council, and the
+do. A solar project near a town is decided by a city council rather than a county board, and the
 coverage is titled "Norman city council", never "Cleveland County" — so a county-only
 sweep would miss it entirely. Towns are also a local signal in their own right, so a clip
 about Yukon from a channel with no call letters is still recognized as local. Town names
 are matched on word boundaries, because Ada sits inside Canada and Miami is mostly in
 Florida.
 
-85 searches a run, against roughly a hundred a day shared with datacenter_yt — which is
-why the two run on different days.
+83 searches a run, against roughly a hundred a day shared with the other two crawlers —
+which is why each has its own day.
 
 `county_source.url` is set to `null`, so nothing is pulled from the news crawler. Point it
 at the crawler's `articles.json` to have counties added automatically as it finds them —
@@ -254,8 +248,8 @@ python3 -m http.server                                  # then open localhost:80
 Comment data comes from the YouTube Data API v3 and remains subject to the YouTube API
 Services Terms of Service. Comments belong to the people who wrote them.
 
-Built for undergraduate research on public response to solar development in the
-south-central states, at the University of Oklahoma.
+Built for undergraduate research on public response to solar development, at the
+University of Oklahoma.
 
 ## License
 
