@@ -1,1 +1,47 @@
-{"runs":[],"cursor":0}
+{
+ "runs": [
+  {
+   "when": "2026-09-14T01:25:43+00:00",
+   "searches": 83,
+   "counties": 77,
+   "sweep_position": 75,
+   "sweep_total": 127,
+   "videos_seen": 130,
+   "videos_rejected": 115,
+   "new_videos": 14,
+   "tracked_videos": 14,
+   "new_comments": 492,
+   "refreshed_comments": 0,
+   "expired_comments": 0,
+   "total_comments": 492,
+   "problems": [
+    "search \"Oklahoma solar farm moratorium\" — 429 rateLimitExceeded",
+    "search \"Oklahoma solar project zoning hearing\" — 429 rateLimitExceeded",
+    "search \"agrivoltaics farmers Oklahoma\" — 429 rateLimitExceeded",
+    "search \"solar grazing sheep Oklahoma\" — 429 rateLimitExceeded",
+    "search \"floating solar reservoir Oklahoma\" — 429 rateLimitExceeded",
+    "search \"Adair County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Alfalfa County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Atoka County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Beaver County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Beckham County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Bryan County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Canadian County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Carter County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Choctaw County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Cleveland County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Coal County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Cotton County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Craig County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Creek County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Delaware County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Dewey County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Ellis County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Garfield County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Garvin County Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Grant County Oklahoma solar farm\" — 429 rateLimitExceeded"
+   ]
+  }
+ ],
+ "cursor": 75
+}

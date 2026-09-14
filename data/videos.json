@@ -1,1 +1,359 @@
-{"updated":null,"tracked":0,"videos":[]}
+{
+ "updated": "2026-09-14T01:25:43+00:00",
+ "tracked": 14,
+ "videos": [
+  {
+   "id": "KTB5KCHGPaQ",
+   "title": "&#39;Disrupt our way of life&#39; Concerned residents voice opposition to Enid area solar farm",
+   "channel": "KOKH - FOX 25",
+   "published": "2024-04-10",
+   "url": "https://www.youtube.com/watch?v=KTB5KCHGPaQ",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [
+    "Enid"
+   ],
+   "local_because": [
+    "town named",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "national"
+   ],
+   "score": 9,
+   "first_seen": "2026-09-14",
+   "comments": 1
+  },
+  {
+   "id": "xPPiNpm8Hzo",
+   "title": "&#39;Nobody knew what was coming&#39;: Council Hill residents upset with solar project",
+   "channel": "KJRH -TV | Tulsa | Channel 2",
+   "published": "2025-11-25",
+   "url": "https://www.youtube.com/watch?v=xPPiNpm8Hzo",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [
+    "Tulsa"
+   ],
+   "local_because": [
+    "town named",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "national"
+   ],
+   "score": 8,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
+   "id": "SId6_MwCuMI",
+   "title": "Video: Wagoner County neighbors hold meeting in opposition to proposed solar farm",
+   "channel": "FOX23 News Tulsa",
+   "published": "2025-04-25",
+   "url": "https://www.youtube.com/watch?v=SId6_MwCuMI",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Wagoner County"
+   ],
+   "states": [],
+   "towns": [
+    "Tulsa",
+    "Coweta",
+    "Wagoner"
+   ],
+   "local_because": [
+    "county named",
+    "town named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "national"
+   ],
+   "score": 7,
+   "first_seen": "2026-09-14",
+   "comments": 1
+  },
+  {
+   "id": "USbEGWV751s",
+   "title": "Turlock solar canal project aims to save water, generate energy",
+   "channel": "KCRA 3",
+   "published": "2025-09-23",
+   "url": "https://www.youtube.com/watch?v=USbEGWV751s",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [],
+   "local_because": [
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "national"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-14",
+   "comments": 1
+  },
+  {
+   "id": "7ENajB9CG9E",
+   "title": "Turlock solar canal project aims to save water, generate energy",
+   "channel": "KCRA 3",
+   "published": "2025-09-23",
+   "url": "https://www.youtube.com/watch?v=7ENajB9CG9E",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [],
+   "local_because": [
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "national"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-14",
+   "comments": 19
+  },
+  {
+   "id": "oUXF6hXStMo",
+   "title": "Solar canals power + water saved",
+   "channel": "Unwaste The Planet",
+   "published": "2026-07-31",
+   "url": "https://www.youtube.com/watch?v=oUXF6hXStMo",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 7
+  },
+  {
+   "id": "jZsHqvTTZBA",
+   "title": "Solar Canals: Arizona&#39;s Answer to Water Scarcity",
+   "channel": "Watts Around The World",
+   "published": "2026-05-01",
+   "url": "https://www.youtube.com/watch?v=jZsHqvTTZBA",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "Arizona"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 2
+  },
+  {
+   "id": "sIOEXN2tN1k",
+   "title": "Project Nexus: California&#39;s Solar Canals",
+   "channel": "Happy Eco News",
+   "published": "2026-04-10",
+   "url": "https://www.youtube.com/watch?v=sIOEXN2tN1k",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 384
+  },
+  {
+   "id": "X8PqBiC3RoE",
+   "title": "The World’s Largest Solar Canal Is Being Built in California",
+   "channel": "BeyondTheBuild",
+   "published": "2025-11-21",
+   "url": "https://www.youtube.com/watch?v=X8PqBiC3RoE",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 55
+  },
+  {
+   "id": "sW2O1eHGLYg",
+   "title": "California Solar Canals Slash Evaporation: Dual Win for Water, Energy",
+   "channel": "mynews.studio",
+   "published": "2025-10-30",
+   "url": "https://www.youtube.com/watch?v=sW2O1eHGLYg",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
+   "id": "qgfcU4eexwU",
+   "title": "Could solar canals be the new clean energy corridors?",
+   "channel": "Climate Central",
+   "published": "2025-10-17",
+   "url": "https://www.youtube.com/watch?v=qgfcU4eexwU",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
+   "id": "ajuRMjsVANQ",
+   "title": "Turlock Irrigation District launches California&#39;s first solar project over canal",
+   "channel": "CBS News Sacramento",
+   "published": "2025-09-18",
+   "url": "https://www.youtube.com/watch?v=ajuRMjsVANQ",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 6
+  },
+  {
+   "id": "hLmV_7abncg",
+   "title": "Could solar canals be the future of saving California’s water and creating clean energy? #solar #ca",
+   "channel": "Sarah Pilla",
+   "published": "2025-07-30",
+   "url": "https://www.youtube.com/watch?v=hLmV_7abncg",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 10
+  },
+  {
+   "id": "nnreThZvoh0",
+   "title": "California Covers Canals with Solar Panels to Save Water and Generate Clean Energy",
+   "channel": "NOW DECODED",
+   "published": "2025-08-20",
+   "url": "https://www.youtube.com/watch?v=nnreThZvoh0",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 2,
+   "first_seen": "2026-09-14",
+   "comments": 6
+  }
+ ]
+}
