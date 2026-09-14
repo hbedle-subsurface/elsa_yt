@@ -1,16 +1,31 @@
 name: Collect comments
 
+# Runs by itself every Monday, and whenever you press the button.
+# To run it now: Actions tab -> Collect comments -> Run workflow.
+#
+# All 77 Oklahoma counties fit in a single run, so every county is
+# checked every week. For daily, change the cron to '17 13 * * *';
+# twice a week is '17 13 * * 1,4'.
+#
+# The weekly run is load-bearing. YouTube's developer policies require
+# stored API data to be deleted or refreshed within 30 calendar days, and
+# every run refreshes every comment on file. Skip a month and the comment
+# text is dropped, leaving the links and your own coding.
+#
+# Needs one secret, YOUTUBE_API_KEY:
+# Settings -> Secrets and variables -> Actions -> New repository secret.
+
 on:
   schedule:
     - cron: '17 13 * * 1'
   workflow_dispatch:
     inputs:
-      states:
-        description: 'States, comma separated. Leave blank for the usual eight.'
+      counties:
+        description: 'Counties, comma separated. Blank uses the built-in Oklahoma list.'
         required: false
         default: ''
       days:
-        description: 'How far back to look for videos. Blank uses 365.'
+        description: 'How far back to look for videos. Blank uses 1095 (three years).'
         required: false
         default: ''
       topics:
@@ -42,9 +57,9 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
           python collect/collect.py \
-            ${{ inputs.states && format('--states "{0}"', inputs.states) || '' }} \
-            ${{ inputs.days   && format('--days {0}',     inputs.days)   || '' }} \
-            ${{ inputs.topics && format('--topics "{0}"', inputs.topics) || '' }}
+            ${{ inputs.counties && format('--counties "{0}"', inputs.counties) || '' }} \
+            ${{ inputs.days     && format('--days {0}',       inputs.days)     || '' }} \
+            ${{ inputs.topics   && format('--topics "{0}"',   inputs.topics)   || '' }}
 
       - name: Save what it found
         run: |
