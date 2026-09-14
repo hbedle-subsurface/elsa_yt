@@ -3,126 +3,144 @@
 Collects YouTube comments left under local coverage of solar projects, and gives you a
 page for reading and coding them.
 
-Live at **https://hbedle-subsurface.github.io/elsa_YT/**
+Live at **https://hbedle-subsurface.github.io/elsa_yt/**
 
-Local TV stations cover county hearings and post the clips. The comments underneath are
-written by people who live there, at more length and in plainer words than a news article
-reports them. That is the point of this: a news story says residents raised concerns about
-property values; a comment says *they keep saying property values won't drop but my
-appraiser told me otherwise, and nobody at that meeting answered the question.*
+---
+
+## What changed in this rebuild, and why
+
+The first version searched by state and it did not work. Of 1,405 comments collected,
+**71% came from two videos** — a floating solar plant in India and a canal project in
+California — and only **22 of 1,405** sat under a video that named one of the eight states
+at all. Three separate mistakes caused that, and all three are fixed here.
+
+**Searching by state does nothing on YouTube.** YouTube ignores a state name when it has a
+stronger title match, so "solar farm Oklahoma" returned whatever was popular about solar
+farms. Local coverage is titled by county — *Payne County residents pack hearing* — so
+counties are what gets searched now. The county list comes from the news crawler, which
+already pulls county names out of headlines.
+
+**The filter let anything through on a title match.** Subject and locality were added into
+one score with the bar at 3, and a topic phrase in the title scored exactly 3. So
+"Inside a floating solar plant of India" cleared the bar with no local signal whatever.
+Those are now two separate tests and both must pass:
+
+- *Subject* — a solar phrase appears in the title or description.
+- *Local* — a named county, a named US state, broadcast call letters in the channel name
+  (KFOR, WJCL, WCPO), or a county or city government channel.
+
+Points still exist, but only to order what survives. They cannot admit anything on their
+own. Replayed against the old collection, this keeps 11 videos of 36 and drops every
+India, China, Britain, Central Asia, TEDx and product-channel result.
+
+**Geography was being invented.** When a video named no state, the old version fell back
+to whichever state's search found it — labelling a Georgia story as Louisiana and an
+Indiana one as Missouri. That fallback is gone. A video's location comes from what the
+video says, and which search found it is recorded as `found_by_search`, shown in the
+interface as provenance, and never used as a place.
+
+**The county extractor took the preceding word**, producing "These Jackson County" and
+"The Llano County". Counties in the configured list are now matched by name, so Roger
+Mills and Le Flore survive intact; anything outside the list falls back to a pattern that
+takes one word unless the first is a real county-name prefix — El Paso, St. Charles, Dona
+Ana, Val Verde, Palo Pinto.
 
 ---
 
 ## Setting it up
 
-Unlike the news crawler, this one needs a key. It is free and takes about five minutes.
+Needs a free YouTube API key. Five minutes:
 
-1. Go to **console.cloud.google.com**, sign in, create a project (any name).
-2. **APIs & Services → Library**, search for **YouTube Data API v3**, click **Enable**.
-3. **APIs & Services → Credentials → Create credentials → API key**. Copy it.
-4. In this repository: **Settings → Secrets and variables → Actions → New repository
-   secret**. Name it exactly `YOUTUBE_API_KEY`, paste the key, save.
-5. **Settings → Actions → General → Workflow permissions → Read and write permissions.**
+1. **console.cloud.google.com** → create a project. Ignore the free trial banner; billing
+   is not required and the quota cannot be charged.
+2. **APIs & Services → Library** → **YouTube Data API v3** → Enable.
+3. **APIs & Services → Credentials** → Create credentials → API key. Under API
+   restrictions, restrict it to YouTube Data API v3. Leave application restrictions at
+   None — Actions runs from changing IPs.
+4. This repo: **Settings → Secrets and variables → Actions → New repository secret**,
+   named exactly `YOUTUBE_API_KEY`.
+5. **Settings → Actions → General → Workflow permissions → Read and write.**
 6. **Actions → Collect comments → Run workflow.**
-
-Restrict the key to the YouTube Data API while you are in Credentials. It cannot cost
-money — the quota is free and capped, not billed — but a loose key is a loose key.
 
 ---
 
 ## The thirty day rule
 
-**This is the constraint that shapes everything else.** YouTube's developer policies
-require stored API data to be deleted or refreshed within 30 calendar days. So this cannot
-be a growing archive the way the news tool is.
+YouTube's developer policies require stored API data to be deleted or refreshed within 30
+calendar days, so this cannot be a growing archive the way the news crawler is.
 
-What happens instead: every run re-fetches the comments for every video still being
-tracked, which refreshes them inside the window. When a video falls out of the tracked set
-— it ages out, or the cap in `queries.json` pushes it off the end — the comment **text is
-dropped**. What survives is the permalink and your own coding: your categories, your
-notes, your follow-up marks. Those are your research data, not YouTube's.
+Every run re-fetches comments for every tracked video, which keeps them inside the window.
+When a video drops out of the tracked set, its comment **text is removed** — the permalink
+and your own coding survive, because your categories and notes are your research data, not
+YouTube's.
 
-Two consequences worth planning around:
-
-- **The weekly run is load-bearing.** Miss a month and the text goes, for everything.
-- **Export regularly.** *Your coding, as a table* includes the comment text. That file
-  is yours to keep under your own data management plan, and that is where a permanent
-  corpus should live — not in this repository.
+So: the weekly run is load-bearing, and **export regularly**. *Your coding, as a table*
+includes the comment text, and that file under your own data management plan is where a
+permanent corpus belongs.
 
 ---
 
-## What it searches
+## Where it searches
 
-`collect/queries.json` holds the whole search.
+`collect/queries.json` holds everything.
 
-YouTube search is not a news database. It ignores most boolean syntax and matches loosely
-against titles, descriptions and tags, so the phrases are short and plain: `"solar farm"
-county meeting Oklahoma`, `"solar farm" residents oppose Kansas`, `agrivoltaics`,
-`"floating solar"`. Twenty searches on the defaults, well inside the roughly 100 search
-calls a day that YouTube allows.
+**All 77 Oklahoma counties**, one search each, listed in `extra_counties`. A complete
+sweep of one state rather than the counties a reporter happened to write about, so a quiet
+county is a finding instead of a gap. 77 county searches plus 6 national ones is 83, which
+fits inside a single run, so no rotation is needed and every county is checked every week.
 
-### Which videos get their comments read
+`county_source.url` is set to `null`, so nothing is pulled from the news crawler. Point it
+at the crawler's `articles.json` to have counties added automatically as it finds them —
+useful if you later add Texas, where listing all 254 counties would not fit in a run.
 
-Not all of them. A search for solar returns product reviews, installer ads and explainer
-channels, and their comments are useless for this. Each video is scored on its title,
-channel name and description:
+`home_state` is Oklahoma. Four Oklahoma county names — Delaware, Texas, Oklahoma and
+Washington — are also state names or repeat in other states, so searches for them turn up
+coverage from Ohio, Missouri and elsewhere. Those results are kept and flagged rather than
+dropped, with a filter in the left rail to hide them. A state name directly followed by
+"County" is read as a county, not a state.
 
-- A topic phrase must appear somewhere, or the video is dropped outright. This is a gate,
-  not points — without it, channel boilerplate like *subscribe for more news from Payne
-  County, Oklahoma* pushes consumer panel reviews over the line.
-- 3 if the topic phrase is in the title, 2 if only in the description.
-- 1 per hearing word — meeting, zoning, commission, moratorium, oppose — up to 2.
-- 1 each for a named county, a named state, and a channel that looks like a local
-  station or a county board.
-
-Below `keep_threshold` the comments are never fetched, which saves quota and keeps the
-reading list clean.
-
-### States, stated and inferred
-
-A video that names a state in its title or description is placed there as fact. Otherwise
-it is placed by which state's search found it, which is a good guess. The two are stored
-separately, exported in separate columns, and shown in the interface as "likely Oklahoma".
+Agrivoltaics and canal or reservoir solar are searched nationally rather than by county,
+since the volume is too low to split up. They still have to pass the local test, which is
+what keeps the global explainer channels out.
 
 ---
 
 ## What is stored, and what is not
 
-Stored per comment: the text, the date, the like count, whether it is a reply, and a
-permalink.
+Per comment: the text, the date, the like count, whether it is a reply, and a permalink.
 
-**Not stored: the author's display name, their channel, their profile picture, or
-anything else identifying who wrote it.** The API returns those; this code does not
-request them into storage. That is deliberate — it is better research ethics, and it makes
-the IRB conversation short.
-
-Which brings up the thing to do before Elsa codes anything in earnest: **get an IRB
-determination.** Analysis of public social media is usually exempt or not human-subjects
-research, but these are posts by identifiable people and having the determination on file
-protects the grant. The design above is what makes that straightforward.
+**Not stored: the author's name, channel, or profile image.** The API returns them; this
+code does not request them into storage. That is deliberate — better ethics, and it makes
+the IRB conversation short. Get the determination before coding in earnest; public social
+media analysis is usually exempt, but these are posts by identifiable people and having it
+on file protects the grant.
 
 ---
 
-## Reading and coding
+## Weekly or daily
 
-Comments are the unit. Filter down the left by state, county, topic, channel, or a search
-across the comment text, then read and code.
+Weekly. All 83 searches fit in one run, so a daily schedule would repeat the same sweep
+every day for results that change on the scale of months, and it would spend 83 of the
+roughly 100 daily search calls doing it — leaving no room to trigger a manual run when you
+want to test something.
 
-Unlike the news tool, the suggested categories here are worth something. A headline
-mentions one of the five things raised at a hearing; a comment is long enough that word
-matching usually lands close. Still read before ticking — the panel says so.
+If you want it anyway, change the cron in `.github/workflows/collect.yml` from
+`'17 13 * * 1'` to `'17 13 * * *'`. Twice a week, `'17 13 * * 1,4'`, is a reasonable middle
+if an active controversy is accruing comments faster than weekly.
 
-Arrow keys move between comments, escape goes back. Comments you have opened are marked
-read. `codebook.json` holds the 27 categories and is the same file the collector reads, so
-there is only one copy.
+---
 
-### What comes out
+## Honest expectations
 
-| Button | File | One row per |
-|---|---|---|
-| Your coding, as a table | `coded_comments_<date>.csv` | comment in the current filter, with its text and one 1/0 column per category |
-| The videos | `videos_<date>.csv` | video, with comment count and location |
-| Back up your work | `coding_backup_<date>.json` | — |
+This returns tens of relevant videos, not hundreds. Local TV does not cover every county
+hearing, and when it does the comments skew toward people arguing about solar in general
+rather than neighbors describing their own county. Treat it as a supporting source. The
+news crawler is the better instrument, and for what people actually say in their own
+words, county meeting minutes and written public comment are better than either.
+
+It is also not a sample of public opinion. It is people who watched a local clip and felt
+strongly enough to type. Good for *what arguments get made and in what words*; no use for
+*how many people think X*.
 
 ---
 
@@ -131,27 +149,23 @@ there is only one copy.
 ```
 .github/workflows/collect.yml   the weekly run and the Run workflow button
 collect/collect.py              the collector; standard library only
-collect/queries.json            searches, scoring, the tracking cap
+collect/queries.json            counties, searches, the two tests, the caps
 codebook.json                   the concern categories
 index.html                      the page and its styling
 app.js                          filtering, reading, coding, exporting
 data/comments.json              the comments; written by the workflow
 data/videos.json                the videos they sit under
-data/runs.json                  a log of each run
+data/runs.json                  run history and the county rotation cursor
 ```
 
-Pages must be set to `main` / root, and the repository public unless you have Pro. The
-page needs a web server — it will not work opened from the file system.
-
-Testing a change without waiting for Monday:
+Pages must be `main` / root, and the repo public unless you have Pro. The page needs a web
+server; it will not work opened from the file system.
 
 ```
-python3 collect/collect.py --dry-run                     # print the searches, call nothing
-YOUTUBE_API_KEY=... python3 collect/collect.py --states Oklahoma
-python3 -m http.server                                   # then open localhost:8000
+python3 collect/collect.py --dry-run                    # print the searches, call nothing
+YOUTUBE_API_KEY=... python3 collect/collect.py --counties "Payne County, Reno County"
+python3 -m http.server                                  # then open localhost:8000
 ```
-
----
 
 ## Credit
 
@@ -163,5 +177,5 @@ south-central states, at the University of Oklahoma.
 
 ## License
 
-Creative Commons Attribution-ShareAlike 4.0 International. See `LICENSE`. This covers the
+Creative Commons Attribution-ShareAlike 4.0 International. See `LICENSE`. Covers the
 software, not the collected data.

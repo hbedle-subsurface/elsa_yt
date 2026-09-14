@@ -17,7 +17,7 @@ let STATE_TOTALS = {}, CUE_TOTALS = {};
 
 const F = {
   q: '', states: new Set(), counties: new Set(), topics: new Set(),
-  channels: new Set(), marks: new Set(), showGone: false
+  channels: new Set(), marks: new Set(), showGone: false, hideElsewhere: false
 };
 
 const $ = s => document.querySelector(s);
@@ -94,10 +94,11 @@ function showEmpty() {
 }
 
 function videoOf(c) { return VIDEOS[c.video] || {}; }
-function placesOf(c) {
-  const v = videoOf(c);
-  return Array.from(new Set((v.states || []).concat(v.via_states || [])));
-}
+/* Only what the video itself names. The previous version fell back to
+   whichever state's search found it, which labelled a Georgia story as
+   Louisiana. Which search found a video is kept separately, as
+   provenance, and never treated as a location. */
+function placesOf(c) { return videoOf(c).states || []; }
 
 function computeTotals() {
   STATE_TOTALS = {}; CUE_TOTALS = {};
@@ -112,6 +113,7 @@ function computeTotals() {
 function passes(c) {
   if (c.expired && !F.showGone) return false;
   const v = videoOf(c);
+  if (F.hideElsewhere && v.elsewhere) return false;
   if (F.states.size && !placesOf(c).some(s => F.states.has(s))) return false;
   if (F.counties.size && !(v.counties || []).some(x => F.counties.has(x))) return false;
   if (F.topics.size && !(v.topics || []).some(t => F.topics.has(t))) return false;
@@ -200,11 +202,12 @@ function renderControls(hits) {
   const sp = $('#statepick'); sp.innerHTML = '';
   for (const s of names) sp.appendChild(chip(s, STATE_TOTALS[s], F.states.has(s),
     () => { toggle(F.states, s); render(); }));
-  const guessed = ALL.filter(c => !(videoOf(c).states || []).length
-    && (videoOf(c).via_states || []).length).length;
-  $('#statenote').textContent = guessed
-    ? guessed + ' of these sit under a video that names no state, and are placed by '
-      + 'which search found it. The export keeps the two apart.' : '';
+  const placeless = ALL.filter(c => !(videoOf(c).states || []).length
+    && !(videoOf(c).counties || []).length).length;
+  $('#statenote').textContent = placeless
+    ? placeless + ' comments sit under a video that names no state or county. They '
+      + 'are kept because the channel is a local station, so they are local to '
+      + 'somewhere \u2014 the video just does not say where in its title.' : '';
 
   const cp = $('#countypick'); cp.innerHTML = '';
   const counties = tallyBy(c => videoOf(c).counties || []);
@@ -235,6 +238,21 @@ function renderControls(hits) {
   mp.appendChild(chip('With a note', cnt(c => CODES[c.id] && CODES[c.id].note),
     F.marks.has('noted'), () => { toggle(F.marks, 'noted'); render(); }, 'g'));
 
+  const ep = $('#elsewherepick');
+  if (ep) {
+    ep.innerHTML = '';
+    const away = ALL.filter(c => videoOf(c).elsewhere).length;
+    if (away) {
+      ep.appendChild(chip(F.hideElsewhere ? 'Hidden' : 'Showing them', away,
+        F.hideElsewhere, () => { F.hideElsewhere = !F.hideElsewhere; render(); }, 'g'));
+      $('#elsewherenote').textContent = away + ' comments sit under a video that '
+        + 'names a different state. Oklahoma has a Delaware County, a Texas County '
+        + 'and a Washington County, so those names turn up coverage from elsewhere.';
+    } else {
+      $('#elsewherenote').textContent = 'Nothing so far from outside the home state.';
+    }
+  }
+
   const gp = $('#gonepick'); gp.innerHTML = '';
   const gone = ALL.filter(c => c.expired).length;
   gp.appendChild(chip(F.showGone ? 'Showing them' : 'Hidden', gone, F.showGone,
@@ -257,6 +275,7 @@ function renderActive() {
   for (const v of F.channels) items.push([v, () => F.channels.delete(v)]);
   for (const v of F.marks) items.push([MARK_LABEL[v] || v, () => F.marks.delete(v)]);
   if (F.showGone) items.push(['including aged out', () => { F.showGone = false; }]);
+  if (F.hideElsewhere) items.push(['home state only', () => { F.hideElsewhere = false; }]);
   if (F.q) items.push(['contains "' + F.q + '"', () => { F.q = ''; $('#q').value = ''; }]);
   if (!items.length) return;
 
@@ -391,9 +410,8 @@ function renderDetail(hits) {
       '<div class="where">' + (c.reply_to ? 'A reply · ' : '') +
         esc4(c.published || '') + (c.likes ? ' · ' + c.likes + ' likes' : '') +
         ((v.counties || []).length ? ' · ' + esc4(v.counties.join(', ')) : '') +
-        ((v.states || []).length ? ' · ' + esc4(v.states.join(', '))
-          : (v.via_states || []).length
-            ? ' · likely ' + esc4(v.via_states.join('/')) : '') + '</div>' +
+        ((v.states || []).length ? ' · ' + esc4(v.states.join(', ')) : '')
+        + (v.elsewhere ? ' · outside the home state' : '') + '</div>' +
       (c.expired
         ? '<div class="gonebox">The text of this comment is no longer stored here. '
           + 'YouTube requires stored comments to be refreshed or deleted every '
@@ -404,7 +422,13 @@ function renderDetail(hits) {
       '<p style="margin:0 0 10px;font-family:var(--serif);font-size:15px">'
         + esc4(v.title || 'unknown video') + '</p>' +
       '<p class="quiet" style="margin:0 0 12px">' + esc4(v.channel || '')
-        + (v.published ? ' · ' + esc4(v.published) : '') + '</p>' +
+        + (v.published ? ' · ' + esc4(v.published) : '')
+        + ((v.local_because || []).length
+            ? '<br>Counted as local because: ' + esc4(v.local_because.join(', ')) : '')
+        + ((v.found_by || []).length
+            ? '<br>Found by the ' + esc4(v.found_by.join(', ')) + ' search'
+              + ' <span title="Which search turned this up. Not a claim about '
+              + 'where the video is.">(provenance only)</span>' : '') + '</p>' +
       '<a class="btn" href="' + esc4(c.url) + '" target="_blank" rel="noopener">'
         + 'Open this comment on YouTube</a> ' +
       '<a class="btn ghost" href="' + esc4(v.url || '#') + '" target="_blank" '
@@ -517,7 +541,8 @@ function exportCoded() {
   const use = current();
   const head = ['comment_id', 'comment_text', 'published', 'likes', 'is_reply',
                 'comment_url', 'video_title', 'channel', 'video_url', 'topics',
-                'counties', 'state_in_video', 'state_from_search', 'text_aged_out',
+                'counties', 'state_in_video', 'local_because', 'found_by_search',
+                'text_aged_out',
                 'read', 'follow_up', 'n_codes', 'note']
     .concat(BOOK.categories.map(c => 'code_' + c.id));
   const body = use.map(c => {
@@ -526,7 +551,8 @@ function exportCoded() {
     return [c.id, c.text, c.published, c.likes, c.reply_to ? 1 : 0, c.url,
             v.title, v.channel, v.url, (v.topics || []).join(';'),
             (v.counties || []).join(';'), (v.states || []).join(';'),
-            (v.via_states || []).join(';'), c.expired ? 1 : 0,
+            (v.local_because || []).join(';'), (v.found_by || []).join(';'),
+            c.expired ? 1 : 0,
             k.read ? 1 : 0, k.star ? 1 : 0, k.tags.length, k.note]
       .concat(BOOK.categories.map(x => k.tags.includes(x.id) ? 1 : 0));
   });
@@ -536,12 +562,13 @@ function exportCoded() {
 
 function exportVideos() {
   const head = ['video_id', 'title', 'channel', 'published', 'url', 'topics',
-                'counties', 'state_in_video', 'state_from_search', 'score',
-                'comments_collected', 'comments_disabled'];
+                'counties', 'state_in_video', 'local_because', 'found_by_search',
+                'score', 'comments_collected', 'comments_disabled'];
   const body = Object.values(VIDEOS).map(v => [v.id, v.title, v.channel, v.published,
     v.url, (v.topics || []).join(';'), (v.counties || []).join(';'),
-    (v.states || []).join(';'), (v.via_states || []).join(';'), v.score,
-    v.comments || 0, v.comments_off ? 1 : 0]);
+    (v.states || []).join(';'), (v.local_because || []).join(';'),
+    (v.found_by || []).join(';'), v.score, v.comments || 0,
+    v.comments_off ? 1 : 0]);
   download('videos_' + stamp() + '.csv',
     [head, ...body].map(r => r.map(csvCell).join(',')).join('\n'));
 }
