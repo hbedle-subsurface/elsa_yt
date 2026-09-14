@@ -1,6 +1,48 @@
 {
  "runs": [
   {
+   "when": "2026-09-14T18:40:17+00:00",
+   "searches": 83,
+   "counties": 77,
+   "sweep_position": 23,
+   "sweep_total": 127,
+   "videos_seen": 579,
+   "videos_rejected": 526,
+   "new_videos": 20,
+   "tracked_videos": 34,
+   "new_comments": 224,
+   "refreshed_comments": 492,
+   "expired_comments": 0,
+   "total_comments": 716,
+   "problems": [
+    "search \"Broken Arrow Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Midwest City Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Enid Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Owasso Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Bartlesville Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Muskogee Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Bixby Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Jenks Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Yukon Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Ardmore Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Ponca City Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Duncan Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Del City Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Sand Springs Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Claremore Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"McAlester Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Ada Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Durant Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Tahlequah Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Chickasha Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Guymon Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Weatherford Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Glenpool Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Choctaw Oklahoma solar farm\" — 429 rateLimitExceeded",
+    "search \"Guthrie Oklahoma solar farm\" — 429 rateLimitExceeded"
+   ]
+  },
+  {
    "when": "2026-09-14T01:25:43+00:00",
    "searches": 83,
    "counties": 77,
@@ -43,5 +85,5 @@
    ]
   }
  ],
- "cursor": 75
+ "cursor": 150
 }

@@ -1,7 +1,100 @@
 {
- "updated": "2026-09-14T01:25:43+00:00",
- "tracked": 14,
+ "updated": "2026-09-14T18:40:17+00:00",
+ "tracked": 34,
  "videos": [
+  {
+   "id": "e6_izAR95ic",
+   "title": "Wagoner County commissioners deny zoning for 4500-acre solar farm near Porter",
+   "channel": "KJRH -TV | Tulsa | Channel 2",
+   "published": "2025-06-17",
+   "url": "https://www.youtube.com/watch?v=e6_izAR95ic",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Wagoner County"
+   ],
+   "states": [],
+   "towns": [
+    "Tulsa",
+    "Wagoner"
+   ],
+   "local_because": [
+    "county named",
+    "town named",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Sapulpa",
+    "Tulsa"
+   ],
+   "score": 9,
+   "first_seen": "2026-09-14",
+   "comments": 2
+  },
+  {
+   "id": "s87P8dpgCDc",
+   "title": "Wagoner County commissioners deny zoning for 4500-acre solar farm near Porter",
+   "channel": "KJRH -TV | Tulsa | Channel 2",
+   "published": "2025-06-17",
+   "url": "https://www.youtube.com/watch?v=s87P8dpgCDc",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Wagoner County"
+   ],
+   "states": [],
+   "towns": [
+    "Tulsa",
+    "Wagoner"
+   ],
+   "local_because": [
+    "county named",
+    "town named",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Sapulpa",
+    "Tulsa"
+   ],
+   "score": 9,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
+   "id": "55ovq2S3HH4",
+   "title": "Wagoner County commissioners expected to vote on solar farms future AM",
+   "channel": "KJRH -TV | Tulsa | Channel 2",
+   "published": "2025-06-16",
+   "url": "https://www.youtube.com/watch?v=55ovq2S3HH4",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Wagoner County"
+   ],
+   "states": [],
+   "towns": [
+    "Tulsa",
+    "Wagoner"
+   ],
+   "local_because": [
+    "county named",
+    "town named",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Sapulpa",
+    "Tulsa"
+   ],
+   "score": 9,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
   {
    "id": "KTB5KCHGPaQ",
    "title": "&#39;Disrupt our way of life&#39; Concerned residents voice opposition to Enid area solar farm",
@@ -22,11 +115,48 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Edmond",
+    "Moore",
+    "Norman",
+    "Oklahoma City",
+    "Stillwater",
     "national"
    ],
    "score": 9,
    "first_seen": "2026-09-14",
    "comments": 1
+  },
+  {
+   "id": "nNA01VLd0JQ",
+   "title": "Shawnee hospital uses solar farm to turn sunlight into clean energy",
+   "channel": "KOCO 5 News",
+   "published": "2026-04-20",
+   "url": "https://www.youtube.com/watch?v=nNA01VLd0JQ",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [
+    "Shawnee"
+   ],
+   "local_because": [
+    "town named",
+    "state named",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Edmond",
+    "Norman",
+    "Oklahoma City",
+    "Shawnee"
+   ],
+   "score": 8,
+   "first_seen": "2026-09-14",
+   "comments": 0
   },
   {
    "id": "xPPiNpm8Hzo",
@@ -48,6 +178,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Tulsa",
     "national"
    ],
    "score": 8,
@@ -78,11 +209,173 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Oklahoma City",
+    "Sapulpa",
+    "Tulsa",
     "national"
    ],
    "score": 7,
    "first_seen": "2026-09-14",
    "comments": 1
+  },
+  {
+   "id": "_sqvXq96fVg",
+   "title": "Skiatook ranch faces transformation into solar plant amid resident concerns AM",
+   "channel": "KJRH -TV | Tulsa | Channel 2",
+   "published": "2025-02-26",
+   "url": "https://www.youtube.com/watch?v=_sqvXq96fVg",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [
+    "Tulsa",
+    "Skiatook"
+   ],
+   "local_because": [
+    "town named",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Tulsa"
+   ],
+   "score": 7,
+   "first_seen": "2026-09-14",
+   "comments": 2
+  },
+  {
+   "id": "uomeSmqtZgg",
+   "title": "Solar Power Partnership",
+   "channel": "United For Oklahoma",
+   "published": "2026-01-28",
+   "url": "https://www.youtube.com/watch?v=uomeSmqtZgg",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [
+    "Durant",
+    "Choctaw"
+   ],
+   "local_because": [
+    "town named",
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Oklahoma City"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
+   "id": "3mRP_7KN5Q0",
+   "title": "Sheep + Solar: Rotationally grazing sheep in a solar array",
+   "channel": "WCEE UWSP",
+   "published": "2026-01-26",
+   "url": "https://www.youtube.com/watch?v=3mRP_7KN5Q0",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [],
+   "local_because": [
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "national"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-14",
+   "comments": 0,
+   "comments_off": true
+  },
+  {
+   "id": "pz2uUMpgJ2o",
+   "title": "Solar farm Choctaw Nation okalhoma ",
+   "channel": "Shinjoos vlogs",
+   "published": "2026-01-03",
+   "url": "https://www.youtube.com/watch?v=pz2uUMpgJ2o",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Bryan County"
+   ],
+   "states": [],
+   "towns": [
+    "Choctaw"
+   ],
+   "local_because": [
+    "county named",
+    "town named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Oklahoma City"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-14",
+   "comments": 2
+  },
+  {
+   "id": "34qfiPwQ0qE",
+   "title": "North Fork Solar | Recurrent Energy",
+   "channel": "Recurrent Energy",
+   "published": "2025-11-26",
+   "url": "https://www.youtube.com/watch?v=34qfiPwQ0qE",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Kiowa County"
+   ],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [],
+   "local_because": [
+    "county named",
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Edmond"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
+   "id": "GfTlJveyGak",
+   "title": "Hornet Solar using sheep for solar grazing",
+   "channel": "KAMR Local 4 News",
+   "published": "2025-09-29",
+   "url": "https://www.youtube.com/watch?v=GfTlJveyGak",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [],
+   "local_because": [
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "national"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-14",
+   "comments": 0
   },
   {
    "id": "USbEGWV751s",
@@ -129,6 +422,108 @@
    "score": 5,
    "first_seen": "2026-09-14",
    "comments": 19
+  },
+  {
+   "id": "7PXKnwvDnqw",
+   "title": "Profitable Practices: Solar grazing with Shady Creek Lamb Co.",
+   "channel": "RealAgriculture",
+   "published": "2023-09-25",
+   "url": "https://www.youtube.com/watch?v=7PXKnwvDnqw",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [
+    "Moore"
+   ],
+   "local_because": [
+    "town named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "national"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-14",
+   "comments": 8
+  },
+  {
+   "id": "vSQInWrUIQA",
+   "title": "Farming Under Solar Panels? The Exciting Future of Agrivoltaics!",
+   "channel": "OklahomaGardening",
+   "published": "2026-08-24",
+   "url": "https://www.youtube.com/watch?v=vSQInWrUIQA",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Oklahoma City",
+    "Stillwater",
+    "national"
+   ],
+   "score": 4,
+   "first_seen": "2026-09-14",
+   "comments": 5
+  },
+  {
+   "id": "aOGLnwkakSg",
+   "title": "Google&#39;s 155 MW Solar Project: Powering the Future in Oklahoma",
+   "channel": "Faith Harrison",
+   "published": "2026-08-05",
+   "url": "https://www.youtube.com/watch?v=aOGLnwkakSg",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Oklahoma City"
+   ],
+   "score": 4,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
+   "id": "e9_WX0USKyE",
+   "title": "Colorado Agrivoltaic Learning Center Webinar - What&#39;s New in Agrivoltaics Policy",
+   "channel": "Byron Kominek @ Jack's Solar Garden",
+   "published": "2025-10-06",
+   "url": "https://www.youtube.com/watch?v=e9_WX0USKyE",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [
+    "Colorado"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 4,
+   "first_seen": "2026-09-14",
+   "comments": 0
   },
   {
    "id": "oUXF6hXStMo",
@@ -256,6 +651,31 @@
    "comments": 0
   },
   {
+   "id": "iO3K3HvzvSU",
+   "title": "What US State Just Doubled Its Solar Capacity (Thanks to Google&#39;s AI)&quot;",
+   "channel": "Subsurface",
+   "published": "2025-10-24",
+   "url": "https://www.youtube.com/watch?v=iO3K3HvzvSU",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Oklahoma City"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
    "id": "qgfcU4eexwU",
    "title": "Could solar canals be the new clean energy corridors?",
    "channel": "Climate Central",
@@ -306,6 +726,58 @@
    "comments": 6
   },
   {
+   "id": "R_prjh--WbE",
+   "title": "USDA cuts solar farm funding as one company says energy and agriculture can coexist",
+   "channel": "NewsChannel 5",
+   "published": "2025-08-30",
+   "url": "https://www.youtube.com/watch?v=R_prjh--WbE",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Kentucky",
+    "Tennessee"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "El Reno",
+    "Oklahoma City"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 194
+  },
+  {
+   "id": "eAQiCha5RDw",
+   "title": "Texas Solar Shepherds",
+   "channel": "American Solar Grazing Association",
+   "published": "2025-08-15",
+   "url": "https://www.youtube.com/watch?v=eAQiCha5RDw",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [
+    "Texas"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 7
+  },
+  {
    "id": "hLmV_7abncg",
    "title": "Could solar canals be the future of saving California’s water and creating clean energy? #solar #ca",
    "channel": "Sarah Pilla",
@@ -329,6 +801,81 @@
    "score": 3,
    "first_seen": "2026-09-14",
    "comments": 10
+  },
+  {
+   "id": "hvGHtmORDGY",
+   "title": "Solar Grazing: First Hand Experiences with Johnny Rodgers (Roxboro, NC) (SPES-655NP)",
+   "channel": "VA Extension",
+   "published": "2025-01-17",
+   "url": "https://www.youtube.com/watch?v=hvGHtmORDGY",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [
+    "Virginia"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 3
+  },
+  {
+   "id": "My5yomWRK-Y",
+   "title": "Solar Grazing: First Hand Experiences with Jess Gray (Crystal Hill, VA) SPES-654NP",
+   "channel": "VA Extension",
+   "published": "2025-01-17",
+   "url": "https://www.youtube.com/watch?v=My5yomWRK-Y",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [
+    "Virginia"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
+   "id": "otoclEKyiDc",
+   "title": "Sheep Grazing Solar Sites in Virginia",
+   "channel": "Energy Right",
+   "published": "2024-08-08",
+   "url": "https://www.youtube.com/watch?v=otoclEKyiDc",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [
+    "Virginia"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-14",
+   "comments": 1
   },
   {
    "id": "nnreThZvoh0",
