@@ -13,10 +13,14 @@ const SAVE_KEY = 'solar_yt_codes_v1';
 let BOOK = null, ALL = [], VIDEOS = {}, RUNS = [], META = {};
 let CODES = loadCodes();
 let SELECTED = null;
-let STATE_TOTALS = {}, CUE_TOTALS = {};
+let STATE_TOTALS = {}, COUNTY_TOTALS = {}, CUE_TOTALS = {};
+const shortName = s => {
+  const base = s.replace(/\s+(County|Parish|Borough)$/i, '');
+  return base.length > 9 ? base.slice(0, 8) + '.' : base;
+};
 
 const F = {
-  q: '', states: new Set(), counties: new Set(), topics: new Set(),
+  q: '', states: new Set(), counties: new Set(), towns: new Set(), topics: new Set(),
   channels: new Set(), marks: new Set(), showGone: false, hideElsewhere: false
 };
 
@@ -101,9 +105,10 @@ function videoOf(c) { return VIDEOS[c.video] || {}; }
 function placesOf(c) { return videoOf(c).states || []; }
 
 function computeTotals() {
-  STATE_TOTALS = {}; CUE_TOTALS = {};
+  STATE_TOTALS = {}; COUNTY_TOTALS = {}; CUE_TOTALS = {};
   for (const c of ALL) {
     for (const s of placesOf(c)) STATE_TOTALS[s] = (STATE_TOTALS[s] || 0) + 1;
+    for (const x of videoOf(c).counties || []) COUNTY_TOTALS[x] = (COUNTY_TOTALS[x] || 0) + 1;
     for (const q of c.cues || []) CUE_TOTALS[q] = (CUE_TOTALS[q] || 0) + 1;
   }
 }
@@ -116,6 +121,7 @@ function passes(c) {
   if (F.hideElsewhere && v.elsewhere) return false;
   if (F.states.size && !placesOf(c).some(s => F.states.has(s))) return false;
   if (F.counties.size && !(v.counties || []).some(x => F.counties.has(x))) return false;
+  if (F.towns.size && !(v.towns || []).some(x => F.towns.has(x))) return false;
   if (F.topics.size && !(v.topics || []).some(t => F.topics.has(t))) return false;
   if (F.channels.size && !F.channels.has(v.channel)) return false;
 
@@ -158,9 +164,31 @@ function wire() {
   $('#sessfile').addEventListener('change', importSession);
 }
 
-const TOPIC_LABEL = { solar_siting: 'Siting and opposition',
-  agrivoltaics: 'Agrivoltaics', solar_on_water: 'Canals and reservoirs' };
+const TOPIC_LABEL = {
+  solar_siting: 'Solar', wind_siting: 'Wind', data_center: 'Data centers',
+  battery_storage: 'Battery storage', carbon_capture: 'Carbon capture and CO2 pipelines',
+  nuclear: 'Nuclear', hydrogen: 'Hydrogen', agrivoltaics: 'Agrivoltaics',
+  solar_on_water: 'Canals and reservoirs', hydropower: 'Hydropower and dams',
+  transmission: 'Transmission lines', disposal_seismicity: 'Disposal wells and earthquakes',
+  geothermal: 'Geothermal', biogas: 'Biogas and digesters'
+};
+/* Which family of concerns applies when coding something under this
+   topic. Codebook categories carry the same names in their applies list. */
+const TOPIC_TECH = {
+  solar_siting: 'solar', agrivoltaics: 'solar', solar_on_water: 'solar',
+  wind_siting: 'wind', data_center: 'data_center', battery_storage: 'storage',
+  carbon_capture: 'carbon_capture', nuclear: 'nuclear', hydrogen: 'hydrogen',
+  hydropower: 'hydro', transmission: 'transmission',
+  disposal_seismicity: 'disposal', geothermal: 'geothermal', biogas: 'biogas'
+};
 const topicLabel = id => TOPIC_LABEL[id] || id;
+function techsOf(c) {
+  return (videoOf(c).topics || []).map(t => TOPIC_TECH[t]).filter(Boolean);
+}
+function relevant(cat, techs) {
+  const a = cat.applies || ['all'];
+  return a.includes('all') || a.some(x => techs.includes(x));
+}
 const MARK_LABEL = { unread: 'Not read yet', star: 'To follow up',
   coded: 'Coded', noted: 'With a note' };
 
@@ -172,30 +200,41 @@ function tallyBy(fn) {
 
 function renderControls(hits) {
   const strip = $('#strip'); strip.innerHTML = '';
-  const names = Object.keys(STATE_TOTALS).sort();
-  const maxState = Math.max(1, ...Object.values(STATE_TOTALS));
+
+  /* With one state under study a state strip says nothing, so the strip
+     switches to counties, which is the axis that actually varies. */
+  const byCounty = Object.keys(STATE_TOTALS).length <= 1;
+  const totals = byCounty ? COUNTY_TOTALS : STATE_TOTALS;
+  const groupsOf = byCounty ? (c => videoOf(c).counties || []) : placesOf;
+  const filterSet = byCounty ? F.counties : F.states;
+
+  const names = Object.keys(totals)
+    .sort((a, b) => totals[b] - totals[a] || a.localeCompare(b))
+    .slice(0, 30);
+  const maxState = Math.max(1, ...names.map(n => totals[n]));
   const live = {};
-  for (const c of hits) for (const s of placesOf(c)) live[s] = (live[s] || 0) + 1;
+  for (const c of hits) for (const s of groupsOf(c)) live[s] = (live[s] || 0) + 1;
   const few = names.length <= 16;
 
-  $('#striplab').textContent = hits.length === ALL.length
-    ? 'Comments per state. Click one to filter.'
-    : 'Bar height is each state\u2019s full total; the solid part is what the filters leave.';
+  $('#striplab').textContent = (byCounty ? 'Comments per county' : 'Comments per state')
+    + (hits.length === ALL.length
+        ? '. Click one to filter.'
+        : '. Bar height is the full total; the solid part is what the filters leave.');
 
   for (const s of names) {
-    const total = STATE_TOTALS[s], now = live[s] || 0;
+    const total = totals[s], now = live[s] || 0;
     const b = document.createElement('button');
     b.className = 'stbar';
-    b.setAttribute('aria-pressed', F.states.has(s) ? 'true' : 'false');
+    b.setAttribute('aria-pressed', filterSet.has(s) ? 'true' : 'false');
     b.title = s + ' \u2014 ' + now + ' shown of ' + total;
     const outline = Math.max(2, Math.round(34 * total / maxState));
     const fill = Math.round(outline * now / total);
     b.innerHTML = '<span class="bar"><span class="fill" style="height:' + outline + 'px">'
       + '<span class="fill live" style="display:block;height:' + fill + 'px;margin-top:'
       + (outline - fill) + 'px"></span></span></span><span class="lbl">'
-      + esc4(s.length > 9 ? s.slice(0, 8) + '.' : s)
+      + esc4(shortName(s))
       + (few ? '<span class="cnt">' + now + '</span>' : '') + '</span>';
-    b.addEventListener('click', () => { toggle(F.states, s); render(); });
+    b.addEventListener('click', () => { toggle(filterSet, s); render(); });
     strip.appendChild(b);
   }
 
@@ -214,6 +253,14 @@ function renderControls(hits) {
   for (const [name, n] of Object.entries(counties).sort((a, b) => b[1] - a[1]).slice(0, 14))
     cp.appendChild(chip(name, n, F.counties.has(name),
       () => { toggle(F.counties, name); render(); }, 'g'));
+
+  const wp = $('#townpick'); wp.innerHTML = '';
+  const towns = tallyBy(c => videoOf(c).towns || []);
+  const townList = Object.entries(towns).sort((a, b) => b[1] - a[1]).slice(0, 14);
+  for (const [name, n] of townList)
+    wp.appendChild(chip(name, n, F.towns.has(name),
+      () => { toggle(F.towns, name); render(); }, 'g'));
+  if (!townList.length) wp.innerHTML = '<p class="quiet">No town named yet.</p>';
 
   const tp = $('#topicpick'); tp.innerHTML = '';
   const topics = tallyBy(c => videoOf(c).topics || []);
@@ -271,6 +318,7 @@ function renderActive() {
   const items = [];
   for (const v of F.states) items.push([v, () => F.states.delete(v)]);
   for (const v of F.counties) items.push([v, () => F.counties.delete(v)]);
+  for (const v of F.towns) items.push([v, () => F.towns.delete(v)]);
   for (const v of F.topics) items.push([topicLabel(v), () => F.topics.delete(v)]);
   for (const v of F.channels) items.push([v, () => F.channels.delete(v)]);
   for (const v of F.marks) items.push([MARK_LABEL[v] || v, () => F.marks.delete(v)]);
@@ -291,7 +339,7 @@ function renderActive() {
     c.className = 'pill clear'; c.textContent = 'Clear all';
     c.addEventListener('click', () => {
       F.q = ''; $('#q').value = ''; F.showGone = false;
-      F.states.clear(); F.counties.clear(); F.topics.clear();
+      F.states.clear(); F.counties.clear(); F.towns.clear(); F.topics.clear();
       F.channels.clear(); F.marks.clear(); render();
     });
     box.appendChild(c);
@@ -349,9 +397,10 @@ function renderList(hits) {
         ' · ' + esc4(v.channel || '') +
         (c.published ? ' · ' + esc4(c.published) : '') +
         (c.likes ? ' · ' + c.likes + ' likes' : '') + '</div>' +
-      ((v.counties || []).length
-        ? '<div>' + v.counties.map(x => '<span class="tag place">' + esc4(x)
-          + '</span>').join('') + '</div>' : '') +
+      (((v.counties || []).length || (v.towns || []).length)
+        ? '<div>' + (v.counties || []).concat(v.towns || [])
+            .map(x => '<span class="tag place">' + esc4(x) + '</span>').join('')
+          + '</div>' : '') +
       (k && k.star ? '<span class="tag star">to follow up</span>' : '') +
       (k && k.tags.length ? '<span class="tag">' + k.tags.length + ' coded</span>' : '');
     const open = () => { SELECTED = c.id; render(); window.scrollTo(0, 0); };
@@ -371,6 +420,7 @@ function renderList(hits) {
 function renderDetail(hits) {
   const c = ALL.find(x => x.id === SELECTED);
   const v = videoOf(c), k = codeOf(c);
+  const a = v;
   const idx = hits.findIndex(x => x.id === c.id);
   const list = $('#list');
 
@@ -379,9 +429,11 @@ function renderDetail(hits) {
     + (k.tags.includes(cat.id) ? ' checked' : '') + '><span>'
     + esc4(cat.label) + '</span></label>';
 
+  const techs = techsOf(c);
   const upFront = BOOK.categories.filter(
     x => (c.cues || []).includes(x.id) || k.tags.includes(x.id));
-  const rest = BOOK.categories.filter(x => !upFront.includes(x));
+  const fits = BOOK.categories.filter(x => !upFront.includes(x) && relevant(x, techs));
+  const others = BOOK.categories.filter(x => !upFront.includes(x) && !relevant(x, techs));
 
   const sug = upFront.length
     ? '<div class="sugbox"><div class="codegroup">Words in this comment point at '
@@ -389,14 +441,25 @@ function renderDetail(hits) {
       + 'close — still read it and decide.</div><div class="codegrid">'
       + upFront.map(box).join('') + '</div></div>' : '';
 
+  const grid = list => '<div class="codegrid">' + BOOK.groups.map(g => {
+      const cats = list.filter(x => x.group === g.id);
+      if (!cats.length) return '';
+      return '<div><div class="codegroup">' + esc4(g.label) + '</div>'
+           + cats.map(box).join('') + '</div>';
+    }).join('') + '</div>';
+
+  const techName = techs.length
+    ? (a.topics || []).map(topicLabel).join(' and ') : '';
   const all = '<details class="allcodes"' + (upFront.length ? '' : ' open')
-    + '><summary>All ' + BOOK.categories.length + ' categories</summary>'
-    + '<div class="codegrid">' + BOOK.groups.map(g => {
-        const cats = rest.filter(x => x.group === g.id);
-        if (!cats.length) return '';
-        return '<div><div class="codegroup">' + esc4(g.label) + '</div>'
-             + cats.map(box).join('') + '</div>';
-      }).join('') + '</div></details>';
+    + '><summary>' + (techName
+        ? esc4(techName) + ' \u2014 ' + fits.length + ' categories'
+        : 'All ' + fits.length + ' categories')
+    + '</summary>' + grid(fits) + '</details>'
+    + (others.length
+        ? '<details class="allcodes"><summary>The other ' + others.length
+          + ' categories, for different technologies</summary>' + grid(others)
+          + '</details>'
+        : '');
 
   list.innerHTML =
     '<div class="navrow">' +
@@ -410,6 +473,7 @@ function renderDetail(hits) {
       '<div class="where">' + (c.reply_to ? 'A reply · ' : '') +
         esc4(c.published || '') + (c.likes ? ' · ' + c.likes + ' likes' : '') +
         ((v.counties || []).length ? ' · ' + esc4(v.counties.join(', ')) : '') +
+        ((v.towns || []).length ? ' · ' + esc4(v.towns.join(', ')) : '') +
         ((v.states || []).length ? ' · ' + esc4(v.states.join(', ')) : '')
         + (v.elsewhere ? ' · outside the home state' : '') + '</div>' +
       (c.expired
@@ -541,7 +605,7 @@ function exportCoded() {
   const use = current();
   const head = ['comment_id', 'comment_text', 'published', 'likes', 'is_reply',
                 'comment_url', 'video_title', 'channel', 'video_url', 'topics',
-                'counties', 'state_in_video', 'local_because', 'found_by_search',
+                'counties', 'towns', 'state_in_video', 'local_because', 'found_by_search',
                 'text_aged_out',
                 'read', 'follow_up', 'n_codes', 'note']
     .concat(BOOK.categories.map(c => 'code_' + c.id));
@@ -550,7 +614,8 @@ function exportCoded() {
     const k = CODES[c.id] || { tags: [], note: '', star: false, read: false };
     return [c.id, c.text, c.published, c.likes, c.reply_to ? 1 : 0, c.url,
             v.title, v.channel, v.url, (v.topics || []).join(';'),
-            (v.counties || []).join(';'), (v.states || []).join(';'),
+            (v.counties || []).join(';'), (v.towns || []).join(';'),
+            (v.states || []).join(';'),
             (v.local_because || []).join(';'), (v.found_by || []).join(';'),
             c.expired ? 1 : 0,
             k.read ? 1 : 0, k.star ? 1 : 0, k.tags.length, k.note]
@@ -562,7 +627,7 @@ function exportCoded() {
 
 function exportVideos() {
   const head = ['video_id', 'title', 'channel', 'published', 'url', 'topics',
-                'counties', 'state_in_video', 'local_because', 'found_by_search',
+                'counties', 'towns', 'state_in_video', 'local_because', 'found_by_search',
                 'score', 'comments_collected', 'comments_disabled'];
   const body = Object.values(VIDEOS).map(v => [v.id, v.title, v.channel, v.published,
     v.url, (v.topics || []).join(';'), (v.counties || []).join(';'),

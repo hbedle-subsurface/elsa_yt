@@ -1,7 +1,39 @@
-# What people say about solar
+# What people say about energy projects
 
-Collects YouTube comments left under local coverage of solar projects, and gives you a
-page for reading and coding them.
+Collects YouTube comments left under local coverage of energy infrastructure proposed in
+Oklahoma, and gives you a page for reading and coding them.
+
+Thirteen topics: **solar, wind, battery storage, carbon capture and CO2 pipelines,
+nuclear, hydrogen, hydropower and dams, transmission lines, disposal wells and
+earthquakes, geothermal, biogas and digesters**, plus agrivoltaics and solar on canals and
+reservoirs. The left rail filters by any of them.
+
+Three of those are there for reasons particular to Oklahoma.
+
+**Hydropower** is the Pensacola Dam. FERC found the dam responsible for chronic flooding
+in Miami and ordered GRDA to buy the land it floods; GRDA appealed to the D.C. Circuit.
+The city and 456 property owners are in civil litigation, four tribal nations have filed
+in the relicensing, and a 2019 act of Congress limited FERC's authority over this one dam
+specifically. Decades of public response, tribal sovereignty and easement law in a single
+case.
+
+**Disposal wells and earthquakes** is the comparison case where opposition won. The
+2009–2016 swarm, sustained public pressure, and regulation that actually changed. It also
+shares its mechanism with carbon capture, so the two can be read against each other.
+
+**Transmission lines** are where eminent domain bites, and where solar and wind fights
+often end up. Oklahoma already lived through Plains & Eastern Clean Line.
+
+Data centers live in a companion repository, **datacenter_yt** — a data center is demand
+rather than generation, and on its own it sweeps every Oklahoma place in under two weeks
+instead of thirteen.
+
+**The two share one API key, so they must not run on the same day.** The YouTube quota
+belongs to the Google Cloud project rather than the repository. This one runs Mondays,
+datacenter_yt runs Thursdays.
+
+`codebook.json` is deliberately identical in both, so the two exports carry the same
+columns and can be stacked in a spreadsheet and compared directly. Keep them in sync.
 
 Live at **https://hbedle-subsurface.github.io/elsa_yt/**
 
@@ -80,14 +112,64 @@ permanent corpus belongs.
 
 ---
 
+## What to expect, honestly
+
+A complete sweep of all 77 Oklahoma counties for solar returned six videos carrying
+**fourteen comments**. Oklahoma local TV does cover these hearings; almost nobody comments
+on the clips. That is a finding, and it is worth writing up rather than working around.
+
+The expansion is a bet that some of the other technologies behave differently. Data
+centers are the strongest candidate: a Gallup survey in March 2026 found 71% of Americans
+oppose a data center near them, 48% strongly — higher than opposition to a nearby nuclear
+plant — and opposition swung 49 points in nine months. Oklahoma City's council passed a
+moratorium, SB 1488 would pause data centers over 100 MW statewide until 2029, HB 2992
+adds ratepayer protections, and the Cherokee Nation barred them on its tribal lands. That
+is a live fight with national attention behind it, which is the thing rural solar lacked.
+
+Wind is the other candidate, on a much longer opposition history in the state.
+
+If the other technologies come back as thin as solar did, that is the answer: this
+conversation does not happen on YouTube in Oklahoma, and the effort belongs in county
+minutes and written public comment instead.
+
+---
+
 ## Where it searches
 
 `collect/queries.json` holds everything.
 
-**All 77 Oklahoma counties**, one search each, listed in `extra_counties`. A complete
-sweep of one state rather than the counties a reporter happened to write about, so a quiet
-county is a finding instead of a gap. 77 county searches plus 6 national ones is 83, which
-fits inside a single run, so no rotation is needed and every county is checked every week.
+Seventy-seven counties across seven technologies is 539 combinations, and YouTube allows
+roughly 100 searches a day. So there are **two tiers**:
+
+**Statewide, every run.** 37 searches covering every technology — "Oklahoma data center
+moratorium", "Oklahoma wind turbine moratorium", "Oklahoma CO2 pipeline eminent domain"
+and so on. Anything that makes the state news is caught within a week.
+
+**Place by place, on rotation.** 662 place-and-technology combinations. Each run takes the
+next 48 and picks up where the last one stopped, so a full cycle is about twelve weeks.
+
+**Not every topic sweeps every place.** A topic can carry its own `places` list.
+Hydropower is a Grand Lake story, so it sweeps twelve places around it. Disposal wells and
+earthquakes sweeps the fifteen in the seismic belt north of Oklahoma City. Sweeping all
+127 for either would spend the budget asking counties with no dam and no disposal wells.
+Transmission sweeps everywhere, because lines cross the state.
+
+Nuclear, hydrogen, geothermal, biogas, agrivoltaics and canal solar are **statewide only**
+— Oklahoma has no operating reactor and the others are early enough that asking 127 places
+individually would return nothing 127 times. If something appears, the statewide searches
+catch it. The position is kept in
+`data/runs.json` and printed at the top of every run.
+
+**Towns matter more than they look.** Most Oklahoma counties do not zone; municipalities
+do. A data center or battery site near a town is decided by a city council, and the
+coverage is titled "Norman city council", never "Cleveland County" — so a county-only
+sweep would miss it entirely. Towns are also a local signal in their own right, so a clip
+about Yukon from a channel with no call letters is still recognized as local. Town names
+are matched on word boundaries, because Ada sits inside Canada and Miami is mostly in
+Florida.
+
+85 searches a run, against roughly a hundred a day shared with datacenter_yt — which is
+why the two run on different days.
 
 `county_source.url` is set to `null`, so nothing is pulled from the news crawler. Point it
 at the crawler's `articles.json` to have counties added automatically as it finds them —

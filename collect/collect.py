@@ -203,33 +203,45 @@ def counties_from_news(cfg, problems):
     return ranked[:src.get('max_from_feed', 120)]
 
 
-def build_searches(cfg, counties, cursor):
-    """County searches are rotated so a long list still fits inside the
-    daily search allowance, and every county comes round in a few weeks."""
-    national, per_county = [], []
+def build_searches(cfg, places, cursor):
+    """Two tiers.
+
+    Statewide searches run every week for every technology, so anything
+    that makes the Oklahoma news is caught within a week.
+
+    County searches are the slow sweep. Seventy-seven counties across
+    seven technologies is 539 combinations and YouTube allows about a
+    hundred searches a day, so each run takes the next block and picks up
+    where the last one stopped. A full cycle takes a few months and runs
+    in the background."""
+    statewide = []
     for topic in cfg['topics']:
-        if topic.get('scope') == 'counties':
-            per_county.append(topic)
-        else:
-            for phrase in topic['searches']:
-                national.append({'topic': topic['id'], 'county': '', 'q': phrase})
+        for phrase in topic.get('statewide', []):
+            statewide.append({'topic': topic['id'], 'county': '', 'q': phrase})
 
-    budget = cfg.get('searches_per_run', 70) - len(national)
-    per = sum(len(t['searches']) for t in per_county) or 1
-    take = max(0, budget // per)
+    # A topic may name its own places. Hydropower is a Grand Lake story and
+    # the earthquakes are in the belt north of Oklahoma City, so sweeping
+    # all 127 places for either would spend most of the budget asking
+    # counties with no dam and no disposal wells.
+    pairs = []
+    for topic in cfg['topics']:
+        tmpl = topic.get('county_template')
+        if not tmpl:
+            continue
+        where = topic.get('places') or places
+        for place in where:
+            bare = place.split(',')[0].strip()
+            pairs.append({'topic': topic['id'], 'county': bare,
+                          'q': tmpl.replace('{county}', bare)
+                                   .replace('{place}', bare)})
 
-    ordered, out = [], []
-    if counties:
-        n = len(counties)
-        start = cursor % n
-        ordered = [counties[(start + i) % n] for i in range(min(take, n))]
-    for county in ordered:
-        bare = county.split(',')[0]
-        for topic in per_county:
-            for phrase in topic['searches']:
-                out.append({'topic': topic['id'], 'county': county,
-                            'q': phrase.replace('{county}', bare)})
-    return out + national, (cursor + len(ordered)) if counties else cursor
+    block = min(cfg.get('county_block', 45),
+                max(0, cfg.get('searches_per_run', 85) - len(statewide)))
+    if not pairs or block <= 0:
+        return statewide, cursor
+    start = cursor % len(pairs)
+    taken = [pairs[(start + i) % len(pairs)] for i in range(min(block, len(pairs)))]
+    return statewide + taken, cursor + len(taken)
 
 
 def search_videos(q, days, per_search):
@@ -267,6 +279,17 @@ def best_topic(text, cfg, asked):
     return matches[0]
 
 
+def cities_named(text, cities):
+    """Towns mentioned. Matched on word boundaries because several
+    Oklahoma town names sit inside ordinary words — Ada in Canada,
+    Moore in a surname, Miami in the Florida one."""
+    out = []
+    for city in cities:
+        if re.search(r'\b' + re.escape(city.lower()) + r'\b', text):
+            out.append(city)
+    return out
+
+
 def states_named(text):
     """US states mentioned, not counting the ones that are really county
     names. Oklahoma has a Delaware County, a Texas County, an Oklahoma
@@ -283,7 +306,7 @@ def states_named(text):
     return out
 
 
-def judge(video, asked_topic, cfg, known_counties=()):
+def judge(video, asked_topic, cfg, known_counties=(), cities=()):
     """Two tests, then points.
 
     Subject: does it mention a solar phrase at all.
@@ -302,11 +325,24 @@ def judge(video, asked_topic, cfg, known_counties=()):
     states = states_named(text)
     call = bool(CALL_LETTERS.search(chan))
     gov = any(h in chan.lower() for h in cfg.get('gov_channel_hints', []))
-    local = bool(counties or states or call or gov)
+
+    # "County" is not only a US word. Kenya uses it for its administrative
+    # units, and a Kenyan agrivoltaics video passed the local test on
+    # "Nyeri County" alone. A county from the configured list is proof on
+    # its own; any other county name needs a US state or a US broadcaster
+    # alongside it.
+    known_hit = [c for c in counties if c in set(known_counties)
+                 or c.rsplit(' ', 1)[0] in set(known_counties)]
+    towns = cities_named(text, cities)
+    local = bool(known_hit or towns or states or call or gov)
 
     why = []
-    if counties:
+    if known_hit:
         why.append('county named')
+    elif counties:
+        why.append('county named elsewhere')
+    if towns:
+        why.append('town named')
     if states:
         why.append('state named')
     if call:
@@ -319,13 +355,13 @@ def judge(video, asked_topic, cfg, known_counties=()):
 
     if spec is None or not local:
         return {'keep': False, 'score': 0, 'topic': asked_topic,
-                'counties': counties, 'states': states, 'local_because': why,
-                'elsewhere': elsewhere,
-                'missing': 'no solar phrase' if spec is None else 'nothing local'}
+                'counties': counties, 'states': states, 'towns': towns,
+                'local_because': why, 'elsewhere': elsewhere,
+                'missing': 'no matching phrase' if spec is None else 'nothing local'}
 
     score = 3 if any(p in video['title'].lower() for p in phrases(spec['recognize'])) else 2
     score += min(sum(1 for a in cfg['angles'] if a in text), 2)
-    if counties:
+    if counties or towns:
         score += 2
     if call or gov:
         score += 2
@@ -333,8 +369,8 @@ def judge(video, asked_topic, cfg, known_counties=()):
         score += 1          # one of the states actually under study
 
     return {'keep': True, 'score': score, 'topic': spec['id'], 'counties': counties,
-            'states': states, 'local_because': why, 'elsewhere': elsewhere,
-            'missing': ''}
+            'states': states, 'towns': towns, 'local_because': why,
+            'elsewhere': elsewhere, 'missing': ''}
 
 
 def cues_in(text, codebook):
@@ -417,14 +453,22 @@ def main():
         unique.append(c)
     counties = unique
 
+    cities = cfg.get('cities', [])
+    places = counties + [c for c in cities if c not in counties]
     county_names = [c.split(',')[0].strip() for c in counties]
 
     runs = load_json(RUNS, {'runs': [], 'cursor': 0})
     cursor = runs.get('cursor', 0)
-    searches, next_cursor = build_searches(cfg, counties, cursor)
+    searches, next_cursor = build_searches(cfg, places, cursor)
 
-    print('%d counties available, %d searches this run'
-          % (len(counties), len(searches)))
+    pair_total = sum(len(t['places']) if t.get('places') else len(places)
+                     for t in cfg['topics'] if t.get('county_template'))
+    done = (cursor % pair_total) if pair_total else 0
+    print('%d counties and %d towns, %d technologies, %d searches this run'
+          % (len(counties), len(cities), len(cfg['topics']), len(searches)))
+    if pair_total:
+        print('sweep at %d of %d place-technology pairs (%d%% of a cycle)'
+              % (done, pair_total, round(100 * done / pair_total)))
     if not counties:
         print('No counties yet. Run the news crawler first, or list some under '
               'extra_counties in queries.json. Only the national topics will run.')
@@ -454,7 +498,7 @@ def main():
             kept = 0
             for v in vids:
                 seen += 1
-                m = judge(v, s['topic'], cfg, county_names)
+                m = judge(v, s['topic'], cfg, county_names, cities)
                 if not m['keep']:
                     rejected += 1
                     continue
@@ -471,7 +515,8 @@ def main():
                     'published': v['published'],
                     'url': 'https://www.youtube.com/watch?v=' + v['id'],
                     'topics': [m['topic']], 'counties': m['counties'],
-                    'states': m['states'], 'local_because': m['local_because'],
+                    'states': m['states'], 'towns': m['towns'],
+                    'local_because': m['local_because'],
                     'elsewhere': m['elsewhere'],
                     'found_by': [s['county'] or 'national'],
                     'score': m['score'], 'first_seen': today(), 'comments': 0,
@@ -543,6 +588,8 @@ def main():
                          'comments': comments})
     runs['runs'].insert(0, {
         'when': now_iso(), 'searches': len(searches), 'counties': len(counties),
+        'sweep_position': next_cursor % pair_total if pair_total else 0,
+        'sweep_total': pair_total,
         'videos_seen': seen, 'videos_rejected': rejected, 'new_videos': new_videos,
         'tracked_videos': len(tracked), 'new_comments': fetched,
         'refreshed_comments': refreshed, 'expired_comments': expired,
@@ -558,7 +605,7 @@ def main():
         print('\n%d of the tracked videos name a state other than %s. They are kept '
               'and flagged, not dropped \u2014 %s county names repeat in other states.'
               % (away, cfg['home_state'], cfg['home_state']))
-    print('\n%d results looked at, %d turned away for having no solar phrase '
+    print('\n%d results looked at, %d turned away for having no matching phrase '
           'or nothing local' % (seen, rejected))
     print('%d new videos, %d tracked' % (new_videos, len(tracked)))
     print('%d new comments, %d refreshed, %d expired' % (fetched, refreshed, expired))
