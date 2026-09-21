@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-14T18:40:17+00:00",
- "tracked": 34,
+ "updated": "2026-09-21T18:45:29+00:00",
+ "tracked": 49,
  "videos": [
   {
    "id": "e6_izAR95ic",
@@ -26,8 +26,20 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Bixby",
+    "Jenks",
+    "Mayes County",
+    "McIntosh County",
+    "Muskogee",
+    "Muskogee County",
+    "Okmulgee County",
+    "Osage County",
+    "Owasso",
+    "Rogers County",
     "Sapulpa",
-    "Tulsa"
+    "Tulsa",
+    "Tulsa County",
+    "Wagoner County"
    ],
    "score": 9,
    "first_seen": "2026-09-14",
@@ -57,8 +69,20 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Bixby",
+    "Jenks",
+    "Mayes County",
+    "McIntosh County",
+    "Muskogee",
+    "Muskogee County",
+    "Okmulgee County",
+    "Osage County",
+    "Owasso",
+    "Rogers County",
     "Sapulpa",
-    "Tulsa"
+    "Tulsa",
+    "Tulsa County",
+    "Wagoner County"
    ],
    "score": 9,
    "first_seen": "2026-09-14",
@@ -88,8 +112,19 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Bixby",
+    "Jenks",
+    "Mayes County",
+    "McIntosh County",
+    "Muskogee",
+    "Muskogee County",
+    "Okmulgee County",
+    "Osage County",
+    "Owasso",
+    "Rogers County",
     "Sapulpa",
-    "Tulsa"
+    "Tulsa",
+    "Wagoner County"
    ],
    "score": 9,
    "first_seen": "2026-09-14",
@@ -116,10 +151,12 @@
    "elsewhere": false,
    "found_by": [
     "Edmond",
+    "Enid",
     "Moore",
     "Norman",
     "Oklahoma City",
     "Stillwater",
+    "Yukon",
     "national"
    ],
    "score": 9,
@@ -149,6 +186,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Del City",
     "Edmond",
     "Norman",
     "Oklahoma City",
@@ -186,6 +224,83 @@
    "comments": 0
   },
   {
+   "id": "_4F7rkh67f0",
+   "title": "Crawford County residents discuss controversial annexation for solar farm",
+   "channel": "KOAM News Now",
+   "published": "2025-11-14",
+   "url": "https://www.youtube.com/watch?v=_4F7rkh67f0",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Crawford County"
+   ],
+   "states": [],
+   "towns": [],
+   "local_because": [
+    "county named elsewhere",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Del City"
+   ],
+   "score": 8,
+   "first_seen": "2026-09-21",
+   "comments": 0
+  },
+  {
+   "id": "KdjUqaH5QZg",
+   "title": "Residents protest 1,900-acre solar farm proposal in Ottawa County",
+   "channel": "13 ON YOUR SIDE",
+   "published": "2026-09-11",
+   "url": "https://www.youtube.com/watch?v=KdjUqaH5QZg",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Ottawa County"
+   ],
+   "states": [],
+   "towns": [],
+   "local_because": [
+    "county named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Del City"
+   ],
+   "score": 7,
+   "first_seen": "2026-09-21",
+   "comments": 24
+  },
+  {
+   "id": "__osWONxzis",
+   "title": "Jefferson County solar Farm building partnership with local farms",
+   "channel": "WSIL News 3",
+   "published": "2025-12-11",
+   "url": "https://www.youtube.com/watch?v=__osWONxzis",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Jefferson County"
+   ],
+   "states": [],
+   "towns": [],
+   "local_because": [
+    "county named",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Jefferson County"
+   ],
+   "score": 7,
+   "first_seen": "2026-09-21",
+   "comments": 2
+  },
+  {
    "id": "SId6_MwCuMI",
    "title": "Video: Wagoner County neighbors hold meeting in opposition to proposed solar farm",
    "channel": "FOX23 News Tulsa",
@@ -209,9 +324,21 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Bixby",
+    "Jenks",
+    "Mayes County",
+    "McIntosh County",
+    "Muskogee",
+    "Muskogee County",
     "Oklahoma City",
+    "Okmulgee County",
+    "Osage County",
+    "Owasso",
+    "Rogers County",
     "Sapulpa",
     "Tulsa",
+    "Tulsa County",
+    "Wagoner County",
     "national"
    ],
    "score": 7,
@@ -244,6 +371,128 @@
    "score": 7,
    "first_seen": "2026-09-14",
    "comments": 2
+  },
+  {
+   "id": "DuqwtvNUk4E",
+   "title": "Swisher County celebrates new solar farm bringing clean energy and economic boost",
+   "channel": "ABC 7 Amarillo",
+   "published": "2025-04-14",
+   "url": "https://www.youtube.com/watch?v=DuqwtvNUk4E",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Swisher County"
+   ],
+   "states": [
+    "New Mexico",
+    "Oklahoma",
+    "Texas"
+   ],
+   "towns": [],
+   "local_because": [
+    "county named elsewhere",
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Texas County"
+   ],
+   "score": 6,
+   "first_seen": "2026-09-21",
+   "comments": 0
+  },
+  {
+   "id": "VD5fLm197ok",
+   "title": "Garfield county, Oklahoma Solar farm. 2000 acres",
+   "channel": "TheSoonerbruce",
+   "published": "2025-03-17",
+   "url": "https://www.youtube.com/watch?v=VD5fLm197ok",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Garfield County"
+   ],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [],
+   "local_because": [
+    "county named",
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Enid",
+    "Garfield County",
+    "Grant County",
+    "Kay County",
+    "Kingfisher County",
+    "Logan County",
+    "Major County",
+    "Noble County",
+    "Oklahoma County"
+   ],
+   "score": 6,
+   "first_seen": "2026-09-21",
+   "comments": 0
+  },
+  {
+   "id": "ypt5StCtdm0",
+   "title": "What&#39;s Wrong With A Huge Solar Farm In Enid - ROPE Report Live!",
+   "channel": "ROPE Report",
+   "published": "2024-05-09",
+   "url": "https://www.youtube.com/watch?v=ypt5StCtdm0",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [
+    "Enid"
+   ],
+   "local_because": [
+    "town named",
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Enid"
+   ],
+   "score": 6,
+   "first_seen": "2026-09-21",
+   "comments": 0
+  },
+  {
+   "id": "Ip8KzHCF648",
+   "title": "Judge vacates permit for 810-acre solar farm project in northern Michigan",
+   "channel": "UpNorthLive",
+   "published": "2026-04-02",
+   "url": "https://www.youtube.com/watch?v=Ip8KzHCF648",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Cheboygan County"
+   ],
+   "states": [
+    "Michigan"
+   ],
+   "towns": [],
+   "local_because": [
+    "county named elsewhere",
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Del City"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-21",
+   "comments": 639
   },
   {
    "id": "uomeSmqtZgg",
@@ -320,6 +569,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Major County",
     "Oklahoma City"
    ],
    "score": 5,
@@ -348,7 +598,11 @@
    ],
    "elsewhere": false,
    "found_by": [
-    "Edmond"
+    "Edmond",
+    "Jackson County",
+    "Kiowa County",
+    "Pottawatomie County",
+    "Tillman County"
    ],
    "score": 5,
    "first_seen": "2026-09-14",
@@ -421,7 +675,58 @@
    ],
    "score": 5,
    "first_seen": "2026-09-14",
-   "comments": 19
+   "comments": 20
+  },
+  {
+   "id": "LUofO4rt8BY",
+   "title": "Lunch &amp; Learn: A Conversation On  Green  Energy and Oklahoma Farms &amp; Ranches",
+   "channel": "Krystal Butler",
+   "published": "2024-11-15",
+   "url": "https://www.youtube.com/watch?v=LUofO4rt8BY",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Oklahoma County"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-21",
+   "comments": 0
+  },
+  {
+   "id": "vcyezPfeN78",
+   "title": "How To Keep Your Local Government Honest - By Attending Their Meetings!",
+   "channel": "ROPE Report",
+   "published": "2024-05-08",
+   "url": "https://www.youtube.com/watch?v=vcyezPfeN78",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [
+    "Enid"
+   ],
+   "local_because": [
+    "town named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Enid",
+    "Garfield County"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-21",
+   "comments": 1
   },
   {
    "id": "7PXKnwvDnqw",
@@ -467,6 +772,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Del City",
     "Oklahoma City",
     "Stillwater",
     "national"
@@ -494,7 +800,10 @@
    ],
    "elsewhere": false,
    "found_by": [
-    "Oklahoma City"
+    "Major County",
+    "McCurtain County",
+    "Oklahoma City",
+    "Oklahoma County"
    ],
    "score": 4,
    "first_seen": "2026-09-14",
@@ -526,6 +835,86 @@
    "comments": 0
   },
   {
+   "id": "TxSS6He2EyY",
+   "title": "Wind &amp; Solar Farm Fight: Counties Push Back in Texas &amp; Kansas",
+   "channel": "HooserReason",
+   "published": "2025-07-11",
+   "url": "https://www.youtube.com/watch?v=TxSS6He2EyY",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Kansas",
+    "Oklahoma",
+    "Texas"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Texas County"
+   ],
+   "score": 4,
+   "first_seen": "2026-09-21",
+   "comments": 3
+  },
+  {
+   "id": "fdjrgcp_7JQ",
+   "title": "Hail Smashes 4,000-Acre Solar Farm in Texas",
+   "channel": "AccuWeather",
+   "published": "2024-03-28",
+   "url": "https://www.youtube.com/watch?v=fdjrgcp_7JQ",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Texas"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Oklahoma County",
+    "Texas County"
+   ],
+   "score": 4,
+   "first_seen": "2026-09-21",
+   "comments": 611
+  },
+  {
+   "id": "pbEqLWPjFGc",
+   "title": "RWE, Google Sign 15-Year Solar Deal in Oklahoma #RWE #GOOGL #Google #Solar #CleanEnergy #Oklahoma",
+   "channel": "WealthWise",
+   "published": "2026-08-04",
+   "url": "https://www.youtube.com/watch?v=pbEqLWPjFGc",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Del City",
+    "McCurtain County",
+    "Oklahoma County"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-21",
+   "comments": 1
+  },
+  {
    "id": "oUXF6hXStMo",
    "title": "Solar canals power + water saved",
    "channel": "Unwaste The Planet",
@@ -549,6 +938,31 @@
    "score": 3,
    "first_seen": "2026-09-14",
    "comments": 7
+  },
+  {
+   "id": "NTvvyJCAWPQ",
+   "title": "How Sheep Are Solving One of Solar Power&#39;s Biggest Problems",
+   "channel": "PARAGRAPHIC",
+   "published": "2026-07-06",
+   "url": "https://www.youtube.com/watch?v=NTvvyJCAWPQ",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [
+    "Texas"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-21",
+   "comments": 16
   },
   {
    "id": "jZsHqvTTZBA",
@@ -598,7 +1012,32 @@
    ],
    "score": 3,
    "first_seen": "2026-09-14",
-   "comments": 384
+   "comments": 377
+  },
+  {
+   "id": "BJ191tNE2cY",
+   "title": "Alabama lawmaker files bills to pause and regulate solar farms - NBC 15",
+   "channel": "NBC 15",
+   "published": "2026-03-12",
+   "url": "https://www.youtube.com/watch?v=BJ191tNE2cY",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Alabama"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Del City"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-21",
+   "comments": 1
   },
   {
    "id": "X8PqBiC3RoE",
@@ -669,7 +1108,10 @@
    ],
    "elsewhere": false,
    "found_by": [
-    "Oklahoma City"
+    "Mayes County",
+    "Oklahoma City",
+    "Rogers County",
+    "Wagoner County"
    ],
    "score": 3,
    "first_seen": "2026-09-14",
@@ -746,11 +1188,12 @@
    "elsewhere": true,
    "found_by": [
     "El Reno",
+    "Muskogee",
     "Oklahoma City"
    ],
    "score": 3,
    "first_seen": "2026-09-14",
-   "comments": 194
+   "comments": 187
   },
   {
    "id": "eAQiCha5RDw",
@@ -876,6 +1319,31 @@
    "score": 3,
    "first_seen": "2026-09-14",
    "comments": 1
+  },
+  {
+   "id": "HbTwKmvn8P4",
+   "title": "AES’ Great Cove Solar Project",
+   "channel": "AES Corporation",
+   "published": "2023-11-01",
+   "url": "https://www.youtube.com/watch?v=HbTwKmvn8P4",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Pennsylvania"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Duncan"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-21",
+   "comments": 0
   },
   {
    "id": "nnreThZvoh0",
