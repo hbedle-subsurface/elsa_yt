@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-21T18:45:29+00:00",
- "tracked": 49,
+ "updated": "2026-09-28T20:09:05+00:00",
+ "tracked": 54,
  "videos": [
   {
    "id": "e6_izAR95ic",
@@ -27,6 +27,12 @@
    "elsewhere": false,
    "found_by": [
     "Bixby",
+    "Catoosa",
+    "Claremore",
+    "Coweta",
+    "Creek County",
+    "Glenpool",
+    "Inola",
     "Jenks",
     "Mayes County",
     "McIntosh County",
@@ -39,6 +45,7 @@
     "Sapulpa",
     "Tulsa",
     "Tulsa County",
+    "Wagoner",
     "Wagoner County"
    ],
    "score": 9,
@@ -70,6 +77,12 @@
    "elsewhere": false,
    "found_by": [
     "Bixby",
+    "Catoosa",
+    "Claremore",
+    "Coweta",
+    "Creek County",
+    "Glenpool",
+    "Inola",
     "Jenks",
     "Mayes County",
     "McIntosh County",
@@ -82,6 +95,7 @@
     "Sapulpa",
     "Tulsa",
     "Tulsa County",
+    "Wagoner",
     "Wagoner County"
    ],
    "score": 9,
@@ -113,6 +127,11 @@
    "elsewhere": false,
    "found_by": [
     "Bixby",
+    "Catoosa",
+    "Claremore",
+    "Coweta",
+    "Glenpool",
+    "Inola",
     "Jenks",
     "Mayes County",
     "McIntosh County",
@@ -124,6 +143,7 @@
     "Rogers County",
     "Sapulpa",
     "Tulsa",
+    "Wagoner",
     "Wagoner County"
    ],
    "score": 9,
@@ -150,8 +170,14 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Alfalfa County",
+    "Creek County",
     "Edmond",
     "Enid",
+    "Garfield County",
+    "Grant County",
+    "Kingfisher County",
+    "Major County",
     "Moore",
     "Norman",
     "Oklahoma City",
@@ -216,6 +242,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Pryor",
     "Tulsa",
     "national"
    ],
@@ -250,6 +277,32 @@
    "comments": 0
   },
   {
+   "id": "6XdNhaVl0Ww",
+   "title": "Santa Fe County solar farm proposal sparks controversy",
+   "channel": "KRQE",
+   "published": "2025-08-18",
+   "url": "https://www.youtube.com/watch?v=6XdNhaVl0Ww",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Santa Fe County"
+   ],
+   "states": [],
+   "towns": [],
+   "local_because": [
+    "county named elsewhere",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Pryor"
+   ],
+   "score": 8,
+   "first_seen": "2026-09-28",
+   "comments": 3
+  },
+  {
    "id": "KdjUqaH5QZg",
    "title": "Residents protest 1,900-acre solar farm proposal in Ottawa County",
    "channel": "13 ON YOUR SIDE",
@@ -272,7 +325,7 @@
    ],
    "score": 7,
    "first_seen": "2026-09-21",
-   "comments": 24
+   "comments": 25
   },
   {
    "id": "__osWONxzis",
@@ -325,6 +378,11 @@
    "elsewhere": false,
    "found_by": [
     "Bixby",
+    "Catoosa",
+    "Claremore",
+    "Coweta",
+    "Glenpool",
+    "Inola",
     "Jenks",
     "Mayes County",
     "McIntosh County",
@@ -338,6 +396,7 @@
     "Sapulpa",
     "Tulsa",
     "Tulsa County",
+    "Wagoner",
     "Wagoner County",
     "national"
    ],
@@ -366,11 +425,40 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Skiatook",
     "Tulsa"
    ],
    "score": 7,
    "first_seen": "2026-09-14",
    "comments": 2
+  },
+  {
+   "id": "qgSiEMzHwnI",
+   "title": "Solar Farm Delivery Day – Pryor, Oklahoma 🌞🚛",
+   "channel": "Freight Relocators Live",
+   "published": "2025-08-14",
+   "url": "https://www.youtube.com/watch?v=qgSiEMzHwnI",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma"
+   ],
+   "towns": [
+    "Pryor"
+   ],
+   "local_because": [
+    "town named",
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Pryor"
+   ],
+   "score": 6,
+   "first_seen": "2026-09-28",
+   "comments": 0
   },
   {
    "id": "DuqwtvNUk4E",
@@ -424,6 +512,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Alfalfa County",
     "Enid",
     "Garfield County",
     "Grant County",
@@ -492,7 +581,7 @@
    ],
    "score": 5,
    "first_seen": "2026-09-21",
-   "comments": 639
+   "comments": 640
   },
   {
    "id": "uomeSmqtZgg",
@@ -517,6 +606,8 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Choctaw",
+    "Durant",
     "Oklahoma City"
    ],
    "score": 5,
@@ -548,6 +639,33 @@
    "comments_off": true
   },
   {
+   "id": "_5tMKCXnQp0",
+   "title": "3,000 Acres DELETED: The Truth About Solar Farms #shorts",
+   "channel": "Owens Habitat Operations",
+   "published": "2026-01-13",
+   "url": "https://www.youtube.com/watch?v=_5tMKCXnQp0",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [],
+   "towns": [
+    "Claremore",
+    "Pryor"
+   ],
+   "local_because": [
+    "town named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Claremore",
+    "Pryor"
+   ],
+   "score": 5,
+   "first_seen": "2026-09-28",
+   "comments": 1
+  },
+  {
    "id": "pz2uUMpgJ2o",
    "title": "Solar farm Choctaw Nation okalhoma ",
    "channel": "Shinjoos vlogs",
@@ -569,6 +687,9 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Bryan County",
+    "Choctaw",
+    "Choctaw County",
     "Major County",
     "Oklahoma City"
    ],
@@ -652,7 +773,7 @@
    ],
    "score": 5,
    "first_seen": "2026-09-14",
-   "comments": 1
+   "comments": 0
   },
   {
    "id": "7ENajB9CG9E",
@@ -675,7 +796,7 @@
    ],
    "score": 5,
    "first_seen": "2026-09-14",
-   "comments": 20
+   "comments": 19
   },
   {
    "id": "LUofO4rt8BY",
@@ -772,6 +893,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Ada",
     "Del City",
     "Oklahoma City",
     "Stillwater",
@@ -800,6 +922,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Creek County",
     "Major County",
     "McCurtain County",
     "Oklahoma City",
@@ -885,7 +1008,7 @@
    ],
    "score": 4,
    "first_seen": "2026-09-21",
-   "comments": 611
+   "comments": 610
   },
   {
    "id": "pbEqLWPjFGc",
@@ -906,7 +1029,9 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Creek County",
     "Del City",
+    "Delaware County",
     "McCurtain County",
     "Oklahoma County"
    ],
@@ -963,6 +1088,31 @@
    "score": 3,
    "first_seen": "2026-09-21",
    "comments": 16
+  },
+  {
+   "id": "5n4CPks_-vg",
+   "title": "California’s Solar Canal Project Is Saving Billions of Gallons of Water",
+   "channel": "Unwaste The Planet",
+   "published": "2026-05-25",
+   "url": "https://www.youtube.com/watch?v=5n4CPks_-vg",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-28",
+   "comments": 3
   },
   {
    "id": "jZsHqvTTZBA",
@@ -1033,11 +1183,37 @@
    ],
    "elsewhere": true,
    "found_by": [
+    "Ada",
     "Del City"
    ],
    "score": 3,
    "first_seen": "2026-09-21",
    "comments": 1
+  },
+  {
+   "id": "Cr2WuGAOt18",
+   "title": "California Is Putting Solar Panels Over Water Canals to Save 63 Billion Gallons",
+   "channel": "Curiosity AI",
+   "published": "2025-11-26",
+   "url": "https://www.youtube.com/watch?v=Cr2WuGAOt18",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-09-28",
+   "comments": 5
   },
   {
    "id": "X8PqBiC3RoE",
@@ -1110,6 +1286,7 @@
    "found_by": [
     "Mayes County",
     "Oklahoma City",
+    "Pryor",
     "Rogers County",
     "Wagoner County"
    ],
@@ -1193,7 +1370,7 @@
    ],
    "score": 3,
    "first_seen": "2026-09-14",
-   "comments": 187
+   "comments": 195
   },
   {
    "id": "eAQiCha5RDw",
