@@ -1,6 +1,6 @@
 {
- "updated": "2026-09-28T20:09:05+00:00",
- "tracked": 54,
+ "updated": "2026-10-05T21:13:30+00:00",
+ "tracked": 57,
  "videos": [
   {
    "id": "e6_izAR95ic",
@@ -38,6 +38,7 @@
     "McIntosh County",
     "Muskogee",
     "Muskogee County",
+    "Oklahoma County",
     "Okmulgee County",
     "Osage County",
     "Owasso",
@@ -143,6 +144,7 @@
     "Rogers County",
     "Sapulpa",
     "Tulsa",
+    "Tulsa County",
     "Wagoner",
     "Wagoner County"
    ],
@@ -181,6 +183,7 @@
     "Moore",
     "Norman",
     "Oklahoma City",
+    "Oklahoma County",
     "Stillwater",
     "Yukon",
     "national"
@@ -242,8 +245,14 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "McIntosh County",
+    "Muskogee County",
+    "Okmulgee County",
     "Pryor",
     "Tulsa",
+    "Tulsa County",
+    "Wagoner County",
+    "Woods County",
     "national"
    ],
    "score": 8,
@@ -431,6 +440,32 @@
    "score": 7,
    "first_seen": "2026-09-14",
    "comments": 2
+  },
+  {
+   "id": "mBUFtvcBTEg",
+   "title": "Get the Facts: Solar farms reshape rural Southeast as residents weigh jobs and land use",
+   "channel": "WJCL News",
+   "published": "2026-02-24",
+   "url": "https://www.youtube.com/watch?v=mBUFtvcBTEg",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Georgia"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named",
+    "broadcast call letters"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Oklahoma County"
+   ],
+   "score": 6,
+   "first_seen": "2026-10-05",
+   "comments": 0
   },
   {
    "id": "qgSiEMzHwnI",
@@ -985,6 +1020,31 @@
    "comments": 3
   },
   {
+   "id": "odB_E7c2rs4",
+   "title": "LAMBscaping: why &quot;solar grazing&quot; is the sustainable solution we all need!",
+   "channel": "Pattrn",
+   "published": "2024-08-22",
+   "url": "https://www.youtube.com/watch?v=odB_E7c2rs4",
+   "topics": [
+    "agrivoltaics"
+   ],
+   "counties": [],
+   "states": [
+    "Texas"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 4,
+   "first_seen": "2026-10-05",
+   "comments": 3
+  },
+  {
    "id": "fdjrgcp_7JQ",
    "title": "Hail Smashes 4,000-Acre Solar Farm in Texas",
    "channel": "AccuWeather",
@@ -1033,6 +1093,7 @@
     "Del City",
     "Delaware County",
     "McCurtain County",
+    "Oklahoma City",
     "Oklahoma County"
    ],
    "score": 3,
@@ -1162,7 +1223,7 @@
    ],
    "score": 3,
    "first_seen": "2026-09-14",
-   "comments": 377
+   "comments": 374
   },
   {
    "id": "BJ191tNE2cY",
@@ -1520,6 +1581,31 @@
    ],
    "score": 3,
    "first_seen": "2026-09-21",
+   "comments": 0
+  },
+  {
+   "id": "3k9MOTP8v6E",
+   "title": "California Covered Its Canals With Solar Panels. The Results Are In.",
+   "channel": "The Upstream",
+   "published": "2026-09-25",
+   "url": "https://www.youtube.com/watch?v=3k9MOTP8v6E",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 2,
+   "first_seen": "2026-10-05",
    "comments": 0
   },
   {
