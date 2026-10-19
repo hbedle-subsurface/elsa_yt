@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-12T21:46:07+00:00",
- "tracked": 57,
+ "updated": "2026-10-19T19:22:04+00:00",
+ "tracked": 59,
  "videos": [
   {
    "id": "e6_izAR95ic",
@@ -312,6 +312,32 @@
    "comments": 3
   },
   {
+   "id": "lDR3xBtYVi0",
+   "title": "Judge Rules for RWE in Ottawa County Solar Project Land Dispute",
+   "channel": "FOX 17 WXMI",
+   "published": "2026-10-15",
+   "url": "https://www.youtube.com/watch?v=lDR3xBtYVi0",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [
+    "Ottawa County"
+   ],
+   "states": [],
+   "towns": [],
+   "local_because": [
+    "county named",
+    "broadcast call letters"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Del City"
+   ],
+   "score": 7,
+   "first_seen": "2026-10-19",
+   "comments": 13
+  },
+  {
    "id": "KdjUqaH5QZg",
    "title": "Residents protest 1,900-acre solar farm proposal in Ottawa County",
    "channel": "13 ON YOUR SIDE",
@@ -334,7 +360,7 @@
    ],
    "score": 7,
    "first_seen": "2026-09-21",
-   "comments": 26
+   "comments": 28
   },
   {
    "id": "__osWONxzis",
@@ -440,6 +466,32 @@
    "score": 7,
    "first_seen": "2026-09-14",
    "comments": 2
+  },
+  {
+   "id": "HFbr_DP99MA",
+   "title": "800-Acre Solar Farm Approved: Neighbors Push Back",
+   "channel": "7News | WWNY | Watertown",
+   "published": "2026-10-14",
+   "url": "https://www.youtube.com/watch?v=HFbr_DP99MA",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "New York"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named",
+    "broadcast call letters"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Del City"
+   ],
+   "score": 6,
+   "first_seen": "2026-10-19",
+   "comments": 0
   },
   {
    "id": "mBUFtvcBTEg",
@@ -808,7 +860,7 @@
    ],
    "score": 5,
    "first_seen": "2026-09-14",
-   "comments": 0
+   "comments": 1
   },
   {
    "id": "7ENajB9CG9E",
@@ -930,6 +982,7 @@
    "found_by": [
     "Ada",
     "Del City",
+    "Muskogee",
     "Oklahoma City",
     "Stillwater",
     "national"
@@ -1068,7 +1121,7 @@
    ],
    "score": 4,
    "first_seen": "2026-09-21",
-   "comments": 609
+   "comments": 601
   },
   {
    "id": "pbEqLWPjFGc",
@@ -1223,7 +1276,7 @@
    ],
    "score": 3,
    "first_seen": "2026-09-14",
-   "comments": 377
+   "comments": 384
   },
   {
    "id": "BJ191tNE2cY",
