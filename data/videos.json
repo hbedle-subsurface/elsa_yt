@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-19T19:22:04+00:00",
- "tracked": 59,
+ "updated": "2026-10-26T19:22:37+00:00",
+ "tracked": 60,
  "videos": [
   {
    "id": "e6_izAR95ic",
@@ -331,7 +331,8 @@
    ],
    "elsewhere": false,
    "found_by": [
-    "Del City"
+    "Del City",
+    "Ottawa County"
    ],
    "score": 7,
    "first_seen": "2026-10-19",
@@ -382,7 +383,8 @@
    ],
    "elsewhere": false,
    "found_by": [
-    "Jefferson County"
+    "Jefferson County",
+    "Oklahoma County"
    ],
    "score": 7,
    "first_seen": "2026-09-21",
@@ -466,6 +468,35 @@
    "score": 7,
    "first_seen": "2026-09-14",
    "comments": 2
+  },
+  {
+   "id": "lL7n9WUo1Bc",
+   "title": "Guthrie Rancher Discovers MASSIVE Solar Farm Next to His Land",
+   "channel": "Texas News Rocks",
+   "published": "2026-10-25",
+   "url": "https://www.youtube.com/watch?v=lL7n9WUo1Bc",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Oklahoma",
+    "Texas"
+   ],
+   "towns": [
+    "Guthrie"
+   ],
+   "local_because": [
+    "town named",
+    "state named"
+   ],
+   "elsewhere": false,
+   "found_by": [
+    "Oklahoma City"
+   ],
+   "score": 6,
+   "first_seen": "2026-10-26",
+   "comments": 0
   },
   {
    "id": "HFbr_DP99MA",
@@ -636,7 +667,8 @@
    ],
    "elsewhere": false,
    "found_by": [
-    "Enid"
+    "Enid",
+    "Oklahoma City"
    ],
    "score": 6,
    "first_seen": "2026-09-21",
@@ -668,7 +700,7 @@
    ],
    "score": 5,
    "first_seen": "2026-09-21",
-   "comments": 636
+   "comments": 633
   },
   {
    "id": "uomeSmqtZgg",
@@ -746,6 +778,7 @@
    "elsewhere": false,
    "found_by": [
     "Claremore",
+    "Oklahoma City",
     "Pryor"
    ],
    "score": 5,
@@ -1121,7 +1154,7 @@
    ],
    "score": 4,
    "first_seen": "2026-09-21",
-   "comments": 601
+   "comments": 604
   },
   {
    "id": "pbEqLWPjFGc",
@@ -1201,7 +1234,7 @@
    ],
    "score": 3,
    "first_seen": "2026-09-21",
-   "comments": 15
+   "comments": 16
   },
   {
    "id": "5n4CPks_-vg",
@@ -1276,7 +1309,7 @@
    ],
    "score": 3,
    "first_seen": "2026-09-14",
-   "comments": 384
+   "comments": 382
   },
   {
    "id": "BJ191tNE2cY",
@@ -1484,7 +1517,7 @@
    ],
    "score": 3,
    "first_seen": "2026-09-14",
-   "comments": 193
+   "comments": 196
   },
   {
    "id": "eAQiCha5RDw",
@@ -1659,7 +1692,8 @@
    ],
    "score": 2,
    "first_seen": "2026-10-05",
-   "comments": 0
+   "comments": 0,
+   "comments_off": true
   },
   {
    "id": "nnreThZvoh0",
