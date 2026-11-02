@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-26T19:22:37+00:00",
- "tracked": 60,
+ "updated": "2026-11-02T22:21:46+00:00",
+ "tracked": 66,
  "videos": [
   {
    "id": "e6_izAR95ic",
@@ -47,7 +47,8 @@
     "Tulsa",
     "Tulsa County",
     "Wagoner",
-    "Wagoner County"
+    "Wagoner County",
+    "national"
    ],
    "score": 9,
    "first_seen": "2026-09-14",
@@ -331,7 +332,9 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Creek County",
     "Del City",
+    "Inola",
     "Ottawa County"
    ],
    "score": 7,
@@ -492,6 +495,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Guthrie",
     "Oklahoma City"
    ],
    "score": 6,
@@ -544,7 +548,8 @@
    ],
    "elsewhere": true,
    "found_by": [
-    "Oklahoma County"
+    "Oklahoma County",
+    "national"
    ],
    "score": 6,
    "first_seen": "2026-10-05",
@@ -675,6 +680,32 @@
    "comments": 0
   },
   {
+   "id": "89uDjx32BQY",
+   "title": "Here’s What California Is Learning From Solar Panels Built Over Irrigation Canals",
+   "channel": "KQED News",
+   "published": "2026-10-27",
+   "url": "https://www.youtube.com/watch?v=89uDjx32BQY",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named",
+    "broadcast call letters"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 5,
+   "first_seen": "2026-11-02",
+   "comments": 736
+  },
+  {
    "id": "Ip8KzHCF648",
    "title": "Judge vacates permit for 810-acre solar farm project in northern Michigan",
    "channel": "UpNorthLive",
@@ -700,7 +731,7 @@
    ],
    "score": 5,
    "first_seen": "2026-09-21",
-   "comments": 633
+   "comments": 634
   },
   {
    "id": "uomeSmqtZgg",
@@ -839,6 +870,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Cleveland County",
     "Edmond",
     "Jackson County",
     "Kiowa County",
@@ -1150,11 +1182,12 @@
    "elsewhere": true,
    "found_by": [
     "Oklahoma County",
-    "Texas County"
+    "Texas County",
+    "national"
    ],
    "score": 4,
    "first_seen": "2026-09-21",
-   "comments": 604
+   "comments": 601
   },
   {
    "id": "pbEqLWPjFGc",
@@ -1338,6 +1371,33 @@
    "comments": 1
   },
   {
+   "id": "p-n3NrHHarw",
+   "title": "Tornado Destroys Entire Solar Farm!",
+   "channel": "AccuWeather",
+   "published": "2026-03-11",
+   "url": "https://www.youtube.com/watch?v=p-n3NrHHarw",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Indiana"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Delaware County",
+    "El Reno",
+    "Harper County"
+   ],
+   "score": 3,
+   "first_seen": "2026-11-02",
+   "comments": 180
+  },
+  {
    "id": "Cr2WuGAOt18",
    "title": "California Is Putting Solar Panels Over Water Canals to Save 63 Billion Gallons",
    "channel": "Curiosity AI",
@@ -1410,6 +1470,31 @@
    ],
    "score": 3,
    "first_seen": "2026-09-14",
+   "comments": 0
+  },
+  {
+   "id": "6LA7LneW4vQ",
+   "title": "California Solar Canals Cut Evaporation: Power and Water Secured",
+   "channel": "mynews.studio",
+   "published": "2025-10-25",
+   "url": "https://www.youtube.com/watch?v=6LA7LneW4vQ",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-11-02",
    "comments": 0
   },
   {
@@ -1511,9 +1596,13 @@
    ],
    "elsewhere": true,
    "found_by": [
+    "Cherokee County",
+    "Creek County",
     "El Reno",
+    "Grant County",
     "Muskogee",
-    "Oklahoma City"
+    "Oklahoma City",
+    "national"
    ],
    "score": 3,
    "first_seen": "2026-09-14",
@@ -1568,6 +1657,57 @@
    "score": 3,
    "first_seen": "2026-09-14",
    "comments": 10
+  },
+  {
+   "id": "Drn1StKwP1A",
+   "title": "ABC7 I-Team gets exclusive 1st look at massive Illinois solar farm powering Chicago",
+   "channel": "ABC 7 Chicago",
+   "published": "2025-04-23",
+   "url": "https://www.youtube.com/watch?v=Drn1StKwP1A",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Illinois"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-11-02",
+   "comments": 30
+  },
+  {
+   "id": "ixGmdMiHnBo",
+   "title": "Aerial Tour of a Massive Solar Farm in Chestertown, MD",
+   "channel": "dronegenuity projects",
+   "published": "2025-04-07",
+   "url": "https://www.youtube.com/watch?v=ixGmdMiHnBo",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Maryland"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-11-02",
+   "comments": 0,
+   "comments_off": true
   },
   {
    "id": "hvGHtmORDGY",
@@ -1694,6 +1834,31 @@
    "first_seen": "2026-10-05",
    "comments": 0,
    "comments_off": true
+  },
+  {
+   "id": "Q7Bp1tuqurA",
+   "title": "Crazy Drone Tornado Video and Tornado Damage - June 11, 2026 Ipava Illinois",
+   "channel": "Brian Emfinger",
+   "published": "2026-06-12",
+   "url": "https://www.youtube.com/watch?v=Q7Bp1tuqurA",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Illinois"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Bryan County"
+   ],
+   "score": 2,
+   "first_seen": "2026-11-02",
+   "comments": 414
   },
   {
    "id": "nnreThZvoh0",
