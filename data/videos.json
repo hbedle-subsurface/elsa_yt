@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-02T22:21:46+00:00",
- "tracked": 66,
+ "updated": "2026-11-09T23:01:05+00:00",
+ "tracked": 69,
  "videos": [
   {
    "id": "e6_izAR95ic",
@@ -38,6 +38,7 @@
     "McIntosh County",
     "Muskogee",
     "Muskogee County",
+    "Oklahoma City",
     "Oklahoma County",
     "Okmulgee County",
     "Osage County",
@@ -247,7 +248,9 @@
    "elsewhere": false,
    "found_by": [
     "McIntosh County",
+    "Muskogee",
     "Muskogee County",
+    "Oklahoma City",
     "Okmulgee County",
     "Pryor",
     "Tulsa",
@@ -306,6 +309,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Del City",
     "Pryor"
    ],
    "score": 8,
@@ -335,6 +339,7 @@
     "Creek County",
     "Del City",
     "Inola",
+    "Oklahoma City",
     "Ottawa County"
    ],
    "score": 7,
@@ -495,6 +500,7 @@
    ],
    "elsewhere": false,
    "found_by": [
+    "Edmond",
     "Guthrie",
     "Oklahoma City"
    ],
@@ -548,6 +554,8 @@
    ],
    "elsewhere": true,
    "found_by": [
+    "Love County",
+    "Oklahoma City",
     "Oklahoma County",
     "national"
    ],
@@ -703,7 +711,7 @@
    ],
    "score": 5,
    "first_seen": "2026-11-02",
-   "comments": 736
+   "comments": 737
   },
   {
    "id": "Ip8KzHCF648",
@@ -727,11 +735,12 @@
    ],
    "elsewhere": true,
    "found_by": [
-    "Del City"
+    "Del City",
+    "Elk City"
    ],
    "score": 5,
    "first_seen": "2026-09-21",
-   "comments": 634
+   "comments": 627
   },
   {
    "id": "uomeSmqtZgg",
@@ -1187,7 +1196,32 @@
    ],
    "score": 4,
    "first_seen": "2026-09-21",
-   "comments": 601
+   "comments": 602
+  },
+  {
+   "id": "F4muOP6XEnA",
+   "title": "Here’s What California Is Learning From Solar Panels Built Over Irrigation Canals",
+   "channel": "Scott",
+   "published": "2026-09-21",
+   "url": "https://www.youtube.com/watch?v=F4muOP6XEnA",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-11-09",
+   "comments": 0
   },
   {
    "id": "pbEqLWPjFGc",
@@ -1268,6 +1302,31 @@
    "score": 3,
    "first_seen": "2026-09-21",
    "comments": 16
+  },
+  {
+   "id": "9aug4ecMibM",
+   "title": "Canal Solar Is Saving Water AND Generating Power — The Results Are In",
+   "channel": "Tom Powell Jr",
+   "published": "2026-06-10",
+   "url": "https://www.youtube.com/watch?v=9aug4ecMibM",
+   "topics": [
+    "solar_on_water"
+   ],
+   "counties": [],
+   "states": [
+    "California"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "national"
+   ],
+   "score": 3,
+   "first_seen": "2026-11-09",
+   "comments": 585
   },
   {
    "id": "5n4CPks_-vg",
@@ -1371,6 +1430,31 @@
    "comments": 1
   },
   {
+   "id": "Mi8PxXvF2mw",
+   "title": "Tornado Destroys Solar Farm In Wheatfield Indiana 4K Drone Footage ",
+   "channel": "Timeless Aerial Photography",
+   "published": "2026-03-12",
+   "url": "https://www.youtube.com/watch?v=Mi8PxXvF2mw",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Indiana"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Midwest City"
+   ],
+   "score": 3,
+   "first_seen": "2026-11-09",
+   "comments": 22
+  },
+  {
    "id": "p-n3NrHHarw",
    "title": "Tornado Destroys Entire Solar Farm!",
    "channel": "AccuWeather",
@@ -1391,7 +1475,11 @@
    "found_by": [
     "Delaware County",
     "El Reno",
-    "Harper County"
+    "Harper County",
+    "Major County",
+    "Marshall County",
+    "Moore",
+    "Texas County"
    ],
    "score": 3,
    "first_seen": "2026-11-02",
@@ -1601,7 +1689,9 @@
     "El Reno",
     "Grant County",
     "Muskogee",
+    "Muskogee County",
     "Oklahoma City",
+    "Texas County",
     "national"
    ],
    "score": 3,
@@ -1677,6 +1767,8 @@
    ],
    "elsewhere": true,
    "found_by": [
+    "Moore",
+    "Oklahoma City",
     "national"
    ],
    "score": 3,
@@ -1702,6 +1794,7 @@
    ],
    "elsewhere": true,
    "found_by": [
+    "Washington County",
     "national"
    ],
    "score": 3,
@@ -1854,11 +1947,12 @@
    ],
    "elsewhere": true,
    "found_by": [
-    "Bryan County"
+    "Bryan County",
+    "Enid"
    ],
    "score": 2,
    "first_seen": "2026-11-02",
-   "comments": 414
+   "comments": 415
   },
   {
    "id": "nnreThZvoh0",
