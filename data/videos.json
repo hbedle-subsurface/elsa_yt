@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T23:01:05+00:00",
+ "updated": "2026-11-16T22:55:45+00:00",
  "tracked": 69,
  "videos": [
   {
@@ -711,7 +711,7 @@
    ],
    "score": 5,
    "first_seen": "2026-11-02",
-   "comments": 737
+   "comments": 733
   },
   {
    "id": "Ip8KzHCF648",
@@ -736,11 +736,12 @@
    "elsewhere": true,
    "found_by": [
     "Del City",
-    "Elk City"
+    "Elk City",
+    "national"
    ],
    "score": 5,
    "first_seen": "2026-09-21",
-   "comments": 627
+   "comments": 623
   },
   {
    "id": "uomeSmqtZgg",
@@ -1196,7 +1197,7 @@
    ],
    "score": 4,
    "first_seen": "2026-09-21",
-   "comments": 602
+   "comments": 600
   },
   {
    "id": "F4muOP6XEnA",
@@ -1301,7 +1302,7 @@
    ],
    "score": 3,
    "first_seen": "2026-09-21",
-   "comments": 16
+   "comments": 12
   },
   {
    "id": "9aug4ecMibM",
@@ -1326,7 +1327,7 @@
    ],
    "score": 3,
    "first_seen": "2026-11-09",
-   "comments": 585
+   "comments": 587
   },
   {
    "id": "5n4CPks_-vg",
@@ -1401,7 +1402,7 @@
    ],
    "score": 3,
    "first_seen": "2026-09-14",
-   "comments": 382
+   "comments": 374
   },
   {
    "id": "BJ191tNE2cY",
@@ -1691,6 +1692,7 @@
     "Muskogee",
     "Muskogee County",
     "Oklahoma City",
+    "Oklahoma County",
     "Texas County",
     "national"
    ],
@@ -1773,7 +1775,7 @@
    ],
    "score": 3,
    "first_seen": "2026-11-02",
-   "comments": 30
+   "comments": 29
   },
   {
    "id": "ixGmdMiHnBo",
@@ -1952,7 +1954,7 @@
    ],
    "score": 2,
    "first_seen": "2026-11-02",
-   "comments": 415
+   "comments": 413
   },
   {
    "id": "nnreThZvoh0",
