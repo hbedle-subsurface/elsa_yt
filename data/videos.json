@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-16T22:55:45+00:00",
- "tracked": 69,
+ "updated": "2026-11-24T00:58:16+00:00",
+ "tracked": 71,
  "videos": [
   {
    "id": "e6_izAR95ic",
@@ -369,7 +369,7 @@
    ],
    "score": 7,
    "first_seen": "2026-09-21",
-   "comments": 28
+   "comments": 26
   },
   {
    "id": "__osWONxzis",
@@ -711,7 +711,7 @@
    ],
    "score": 5,
    "first_seen": "2026-11-02",
-   "comments": 733
+   "comments": 741
   },
   {
    "id": "Ip8KzHCF648",
@@ -741,7 +741,7 @@
    ],
    "score": 5,
    "first_seen": "2026-09-21",
-   "comments": 623
+   "comments": 621
   },
   {
    "id": "uomeSmqtZgg",
@@ -935,7 +935,7 @@
    ],
    "score": 5,
    "first_seen": "2026-09-14",
-   "comments": 1
+   "comments": 0
   },
   {
    "id": "7ENajB9CG9E",
@@ -1197,7 +1197,34 @@
    ],
    "score": 4,
    "first_seen": "2026-09-21",
-   "comments": 600
+   "comments": 601
+  },
+  {
+   "id": "Q2wxunqMedw",
+   "title": "Texas Power Grid: It Beats California at Wind and Solar #shorts",
+   "channel": "Other End of the Wire",
+   "published": "2026-11-17",
+   "url": "https://www.youtube.com/watch?v=Q2wxunqMedw",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "California",
+    "Texas"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Moore",
+    "Texas County"
+   ],
+   "score": 3,
+   "first_seen": "2026-11-24",
+   "comments": 1
   },
   {
    "id": "F4muOP6XEnA",
@@ -1327,7 +1354,7 @@
    ],
    "score": 3,
    "first_seen": "2026-11-09",
-   "comments": 587
+   "comments": 590
   },
   {
    "id": "5n4CPks_-vg",
@@ -1402,7 +1429,7 @@
    ],
    "score": 3,
    "first_seen": "2026-09-14",
-   "comments": 374
+   "comments": 380
   },
   {
    "id": "BJ191tNE2cY",
@@ -1950,11 +1977,38 @@
    "elsewhere": true,
    "found_by": [
     "Bryan County",
+    "El Reno",
     "Enid"
    ],
    "score": 2,
    "first_seen": "2026-11-02",
    "comments": 413
+  },
+  {
+   "id": "cMIExsfd7m4",
+   "title": "Hawaii Farm Grows Food Under Solar Panels (And It Actually Works)",
+   "channel": "Here in Hawaii",
+   "published": "2025-12-16",
+   "url": "https://www.youtube.com/watch?v=cMIExsfd7m4",
+   "topics": [
+    "solar_siting"
+   ],
+   "counties": [],
+   "states": [
+    "Hawaii"
+   ],
+   "towns": [],
+   "local_because": [
+    "state named"
+   ],
+   "elsewhere": true,
+   "found_by": [
+    "Del City",
+    "national"
+   ],
+   "score": 2,
+   "first_seen": "2026-11-24",
+   "comments": 28
   },
   {
    "id": "nnreThZvoh0",
